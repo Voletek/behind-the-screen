@@ -1,0 +1,19 @@
+{
+  "id": "dnd-5e",
+  "name": "Fifth Edition Fantasy (2024 rules, SRD 5.2.1)",
+  "license": "CC-BY-4.0 (SRD 5.2.1)",
+  "gm_title": "Game Master",
+  "dice": {
+    "mechanic": "d20",
+    "default_expr": "1d20",
+    "advantage_expr": "2d20kh1",
+    "disadvantage_expr": "2d20kl1"
+  },
+  "stats": ["STR", "DEX", "CON", "INT", "WIS", "CHA"],
+  "stat_range": [1, 30],
+  "resources": ["hp", "temp_hp", "hit_dice", "heroic_inspiration", "exhaustion", "death_saves_success", "death_saves_failure", "spell_slots_1", "spell_slots_2", "spell_slots_3", "spell_slots_4", "spell_slots_5", "spell_slots_6", "spell_slots_7", "spell_slots_8", "spell_slots_9"],
+  "resources_open": true,
+  "conditions": ["Blinded", "Charmed", "Deafened", "Exhaustion", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious"],
+  "conditions_open": false,
+  "difficulty": {"Very easy": 5, "Easy": 10, "Medium": 15, "Hard": 20, "Very hard": 25, "Nearly impossible": 30}
+}

@@ -1,0 +1,27 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Campaign Validate (new file)",
+      "description": "Deterministic campaign check when an agent creates a campaign file under campaigns/: state.json schema and bounds, bible and one-shot required sections, dice-log format, session-log headings. Prep, review and README files are skipped by the script.",
+      "trigger": "PostFileCreate",
+      "matcher": ".*campaigns/.+\\.(json|jsonl|md)$",
+      "action": {
+        "type": "command",
+        "command": "python3 tools/validate-campaign.py --hook {{filePath}}"
+      },
+      "timeout": 30
+    },
+    {
+      "name": "Campaign Validate (save)",
+      "description": "Re-runs the deterministic campaign check every time an agent saves state.json, BIBLE.md, ONESHOT.md, dice-log.jsonl or a session log under campaigns/. Report any FAIL to the user with the fix.",
+      "trigger": "PostFileSave",
+      "matcher": ".*campaigns/.+\\.(json|jsonl|md)$",
+      "action": {
+        "type": "command",
+        "command": "python3 tools/validate-campaign.py --hook {{filePath}}"
+      },
+      "timeout": 30
+    }
+  ]
+}

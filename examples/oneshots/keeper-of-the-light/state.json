@@ -1,0 +1,51 @@
+{
+  "schema": "behind-the-screen/state@1",
+  "campaign": "keeper-of-the-light",
+  "system": "dnd-5e",
+  "session": 0,
+  "mode": "group",
+  "location": "Relief boat, 200 yards off Gullrock",
+  "in_world_date": "Last night before the autumn storm",
+  "party": [
+    {
+      "id": "oona", "name": "Oona Pell", "concept": "Ex-harbour guard", "level": 3,
+      "stats": {"STR": 16, "DEX": 12, "CON": 15, "INT": 10, "WIS": 13, "CHA": 8},
+      "resources": {"hp": {"current": 28, "max": 28}, "hit_dice": {"current": 3, "max": 3}, "second_wind": {"current": 2, "max": 2}},
+      "conditions": [], "inventory": ["Longsword", "Shield", "Chain mail", "Boathook", "Lantern"],
+      "goal": "Get everyone home"
+    },
+    {
+      "id": "tamsin", "name": "Tamsin Rook", "concept": "Chapel healer who knows the old hymns", "level": 3,
+      "stats": {"STR": 10, "DEX": 12, "CON": 14, "INT": 11, "WIS": 16, "CHA": 13},
+      "resources": {"hp": {"current": 24, "max": 24}, "hit_dice": {"current": 3, "max": 3}, "spell_slots_1": {"current": 4, "max": 4}, "spell_slots_2": {"current": 2, "max": 2}},
+      "conditions": [], "inventory": ["Mace", "Holy symbol (a shell)", "Healer's kit", "Hymnbook"],
+      "goal": "Find out why Maren stopped writing"
+    },
+    {
+      "id": "wick", "name": "Wick", "concept": "Smuggler who knows the rocks", "level": 3,
+      "stats": {"STR": 9, "DEX": 17, "CON": 13, "INT": 12, "WIS": 12, "CHA": 14},
+      "resources": {"hp": {"current": 21, "max": 21}, "hit_dice": {"current": 3, "max": 3}},
+      "conditions": [], "inventory": ["Shortsword", "Shortbow", "Thieves' tools", "Oilskin map of the rocks"],
+      "goal": "Stay hidden from the debt-collectors"
+    },
+    {
+      "id": "ansel", "name": "Dr. Ansel Vey", "concept": "Lighthouse Board engineer", "level": 3,
+      "stats": {"STR": 8, "DEX": 14, "CON": 13, "INT": 17, "WIS": 12, "CHA": 10},
+      "resources": {"hp": {"current": 17, "max": 17}, "hit_dice": {"current": 3, "max": 3}, "spell_slots_1": {"current": 4, "max": 4}, "spell_slots_2": {"current": 2, "max": 2}},
+      "conditions": [], "inventory": ["Quarterstaff", "Spellbook", "Toolkit", "The Board's sealed file"],
+      "goal": "Replace the lamp mechanism and leave"
+    }
+  ],
+  "npcs": [
+    {"id": "maren", "name": "Maren, the Keeper", "status": "alive", "disposition": "wary", "location": "Gullrock jetty"},
+    {"id": "old-keeper", "name": "The Old Keeper", "status": "unknown", "disposition": "unknown", "location": "Sea cave"},
+    {"id": "bramble", "name": "Bramble (cat)", "status": "alive", "disposition": "friendly", "location": "Lamp room"}
+  ],
+  "clocks": [
+    {"id": "storm", "name": "The Autumn Storm", "segments": 6, "filled": 0, "on_fill": "The lamp fails", "visible": true},
+    {"id": "waking", "name": "What Sleeps Below", "segments": 8, "filled": 1, "on_fill": "It rises onto Gullrock", "visible": false}
+  ],
+  "threads": [
+    {"id": "letters", "summary": "Why did Maren stop writing?", "status": "open", "opened_session": 0}
+  ]
+}

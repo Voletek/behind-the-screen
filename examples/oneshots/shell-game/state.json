@@ -1,0 +1,30 @@
+{
+  "schema": "behind-the-screen/state@1",
+  "campaign": "shell-game",
+  "system": "tmnt",
+  "session": 0,
+  "mode": "group",
+  "location": "The storm-drain lair under Ninth Street",
+  "party": [
+    {"id": "ripjaw", "name": "Ripjaw", "concept": "Alligator snapping turtle mutant", "stats": {"IQ": 10, "ME": 13, "MA": 9, "PS": 20, "PP": 14, "PE": 18, "PB": 6, "Spd": 9},
+     "resources": {"hp": {"current": 28, "max": 28}, "sdc": {"current": 60, "max": 60}, "attacks_per_melee": {"current": 3, "max": 3}}, "conditions": [], "inventory": ["Shell (natural armour)", "Tonfa pair"]},
+    {"id": "hex", "name": "Hex", "concept": "Raven mutant, hacker", "stats": {"IQ": 17, "ME": 12, "MA": 11, "PS": 9, "PP": 16, "PE": 11, "PB": 12, "Spd": 22},
+     "resources": {"hp": {"current": 18, "max": 18}, "sdc": {"current": 20, "max": 20}, "attacks_per_melee": {"current": 2, "max": 2}}, "conditions": [], "inventory": ["Laptop", "Lockpicks", "Throwing knives"]},
+    {"id": "dozer", "name": "Dozer", "concept": "Pit bull mutant, ex-gang", "stats": {"IQ": 11, "ME": 10, "MA": 14, "PS": 18, "PP": 15, "PE": 16, "PB": 10, "Spd": 14},
+     "resources": {"hp": {"current": 24, "max": 24}, "sdc": {"current": 40, "max": 40}, "attacks_per_melee": {"current": 3, "max": 3}}, "conditions": [], "inventory": ["Chain", "Toolbox", "Old gang jacket"]},
+    {"id": "splice", "name": "Splice", "concept": "Lab-rat mutant, chemist", "stats": {"IQ": 18, "ME": 14, "MA": 10, "PS": 8, "PP": 13, "PE": 12, "PB": 9, "Spd": 15},
+     "resources": {"hp": {"current": 17, "max": 17}, "sdc": {"current": 18, "max": 18}, "attacks_per_melee": {"current": 2, "max": 2}}, "conditions": [], "inventory": ["Field chemistry kit", "Med kit", "Stun baton"]}
+  ],
+  "npcs": [
+    {"id": "guard", "name": "Hal Okafor (night guard)", "status": "missing", "disposition": "unknown", "location": "Drains, mutating"},
+    {"id": "buyer", "name": "The weapons buyer", "status": "alive", "disposition": "hostile", "location": "Waterfront"},
+    {"id": "iron-boss", "name": "Roxie (9th Street Iron boss)", "status": "alive", "disposition": "wary", "location": "The garage"}
+  ],
+  "clocks": [
+    {"id": "gang-war", "name": "Gang war on Ninth Street", "segments": 6, "filled": 1, "on_fill": "Street fight with civilians caught in it", "visible": true},
+    {"id": "water-main", "name": "Mutagen in the water main", "segments": 4, "filled": 0, "on_fill": "The neighbourhood starts to change", "visible": false}
+  ],
+  "threads": [
+    {"id": "crate", "summary": "Who has the mutagen crate?", "status": "open", "opened_session": 0}
+  ]
+}

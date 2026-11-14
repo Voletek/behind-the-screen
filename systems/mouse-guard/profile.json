@@ -1,0 +1,18 @@
+{
+  "id": "mouse-guard",
+  "name": "Mouse Guard Roleplaying Game (2nd edition)",
+  "license": "proprietary-summary",
+  "gm_title": "GM",
+  "dice": {
+    "mechanic": "pool",
+    "default_expr": "4d6>=4",
+    "success_on": 4,
+    "explode_expr": "4d6>=4!"
+  },
+  "stats": ["Nature", "Will", "Health", "Resources", "Circles"],
+  "stat_range": [0, 7],
+  "resources": ["fate", "persona", "checks", "disposition"],
+  "resources_open": true,
+  "conditions": ["Healthy", "Hungry and Thirsty", "Angry", "Tired", "Injured", "Sick", "Dead"],
+  "conditions_open": false
+}

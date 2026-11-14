@@ -1,0 +1,30 @@
+{
+  "schema": "behind-the-screen/state@1",
+  "campaign": "the-thaw-at-pinebrook",
+  "system": "mouse-guard",
+  "session": 0,
+  "mode": "group",
+  "location": "High path above the stream, half a day from Pinebrook",
+  "in_world_date": "Early spring",
+  "party": [
+    {"id": "sorrel", "name": "Sorrel", "concept": "Patrol Leader", "stats": {"Nature": 3, "Will": 4, "Health": 4, "Resources": 3, "Circles": 3},
+     "resources": {"fate": {"current": 1, "max": 9}, "persona": {"current": 1, "max": 9}, "checks": {"current": 0, "max": 9}}, "conditions": ["Healthy"], "inventory": ["Sword", "Cloak", "Rope"]},
+    {"id": "tamsy", "name": "Tamsy", "concept": "Guardmouse healer", "stats": {"Nature": 4, "Will": 3, "Health": 5, "Resources": 2, "Circles": 2},
+     "resources": {"fate": {"current": 1, "max": 9}, "persona": {"current": 1, "max": 9}, "checks": {"current": 0, "max": 9}}, "conditions": ["Healthy"], "inventory": ["Spare rope", "Herb pouch", "Knife"]},
+    {"id": "burr", "name": "Old Burr", "concept": "Patrol Guard carpenter", "stats": {"Nature": 3, "Will": 5, "Health": 3, "Resources": 4, "Circles": 4},
+     "resources": {"fate": {"current": 1, "max": 9}, "persona": {"current": 1, "max": 9}, "checks": {"current": 0, "max": 9}}, "conditions": ["Healthy"], "inventory": ["Axe", "Carpenter's tools"]},
+    {"id": "fennick", "name": "Fennick", "concept": "Tenderpaw", "stats": {"Nature": 5, "Will": 2, "Health": 4, "Resources": 1, "Circles": 1},
+     "resources": {"fate": {"current": 0, "max": 9}, "persona": {"current": 0, "max": 9}, "checks": {"current": 0, "max": 9}}, "conditions": ["Healthy"], "inventory": ["Staff", "Lantern"]}
+  ],
+  "npcs": [
+    {"id": "hask", "name": "Miller Hask", "status": "alive", "disposition": "unfriendly", "location": "Pinebrook"},
+    {"id": "pip", "name": "Pip the apprentice", "status": "alive", "disposition": "unknown", "location": "Mill race, clinging to the wheel"},
+    {"id": "heron", "name": "The heron", "status": "alive", "disposition": "hostile", "location": "Mill race shallows"}
+  ],
+  "clocks": [
+    {"id": "flood", "name": "The Flood", "segments": 6, "filled": 0, "on_fill": "The granary floods", "visible": true}
+  ],
+  "threads": [
+    {"id": "pip", "summary": "Save the miller's apprentice", "status": "open", "opened_session": 0}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "rules-light",
+  "name": "Rules-Light Engine",
+  "license": "this-repo",
+  "gm_title": "GM",
+  "dice": {
+    "mechanic": "pbta",
+    "default_expr": "pbta+0",
+    "bands": {"critical": 12, "full": 10, "partial": 7},
+    "edge_expr": "3d6kh2",
+    "bane_expr": "3d6kl2"
+  },
+  "stats": ["Might", "Grace", "Wits", "Heart"],
+  "stat_range": [-1, 3],
+  "resources": ["harm", "strain", "xp"],
+  "resources_open": true,
+  "conditions": [],
+  "conditions_open": true
+}

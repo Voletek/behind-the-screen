@@ -1,0 +1,17 @@
+{
+  "id": "tmnt",
+  "name": "Teenage Mutant Ninja Turtles & Other Strangeness (Palladium)",
+  "license": "proprietary-summary",
+  "gm_title": "Game Master",
+  "dice": {
+    "mechanic": "d20",
+    "default_expr": "1d20",
+    "skill_expr": "1d100"
+  },
+  "stats": ["IQ", "ME", "MA", "PS", "PP", "PE", "PB", "Spd"],
+  "stat_range": [1, 40],
+  "resources": ["hp", "sdc", "attacks_per_melee", "bio_e"],
+  "resources_open": true,
+  "conditions": [],
+  "conditions_open": true
+}
