@@ -1,0 +1,12 @@
+{
+  "schema": "behind-the-screen/state@1",
+  "campaign": "fixture",
+  "system": "dnd-5e",
+  "session": 1,
+  "party": [
+    {"id": "ada", "name": "Ada", "stats": {"STR": 10, "DEX": 14}, "resources": {"hp": {"current": 5, "max": 10}}, "conditions": ["Poisoned"]}
+  ],
+  "npcs": [{"id": "bob", "name": "Bob", "status": "alive", "disposition": "friendly"}],
+  "clocks": [{"id": "c1", "name": "Clock", "segments": 4, "filled": 2}],
+  "threads": [{"id": "t1", "summary": "Why?", "status": "open"}]
+}

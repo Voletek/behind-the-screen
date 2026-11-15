@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Session Continuity Check",
+      "description": "When an agent saves a session log, check it against the campaign bible's continuity rules, safety and house rules, and confirm state.json was updated. Judgment-level check; the deterministic part is campaign-validate.json.",
+      "trigger": "PostFileSave",
+      "matcher": ".*campaigns/[^/]+/sessions/session-\\d+\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "A session log was just saved. Find its campaign folder (the folder containing sessions/). Read that campaign's BIBLE.md (Safety, House Rules, Continuity Rules, Canon Forks) and state.json. Check the saved log: every continuity rule (PASS/FAIL), dead NPCs did not act, every change under '## State Changes' is reflected in state.json, rulings are logged, new canon is recorded under '## Canon Added' or the bible, and nothing crossed a line or veil. Report a PASS/FAIL table with a fix for each FAIL. Do not edit files unless the user asks."
+      },
+      "timeout": 60
+    }
+  ]
+}

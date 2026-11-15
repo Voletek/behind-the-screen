@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Fractured Shadows Continuity Check",
+      "description": "Example campaign hook. Copy to .kiro/hooks/fractured-shadows-continuity.json once the campaign lives in campaigns/fractured-shadows/. Fires when an agent saves a session log and checks it against the bible's 12 continuity rules.",
+      "trigger": "PostFileSave",
+      "matcher": ".*campaigns/fractured-shadows/sessions/session-\\d+\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "A Fractured Shadows session log was just saved. Read campaigns/fractured-shadows/BIBLE.md (sections 3 Safety, 5 House Rules, 11 Continuity Rules, 12 Canon Forks, Open Canon Questions) and campaigns/fractured-shadows/state.json, then check the saved log against every continuity rule. In particular: the name 'Draeven Vole' must not appear in narration or NPC dialogue unless state.json flags.name_draeven_confirmed is true; no gods answering or divine magic; no game-UI language in the fiction; every magic/Mark/Shard use has a Strain cost or described consequence; no fast travel without severe cost; no prophecy presented as true fate; Custodians never govern; no retired names; no species-as-morality; Alaric withholds but never lies; the Shadow Weaver is not seen directly before Arc III; the old world appears only as memory bleed. Also confirm every divergence from book canon is logged in bible section 12. Then run python3 tools/validate-campaign.py campaigns/fractured-shadows if a shell is available. Report a PASS/FAIL table with a fix for each FAIL."
+      },
+      "timeout": 60
+    }
+  ]
+}

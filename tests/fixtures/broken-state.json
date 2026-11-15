@@ -1,0 +1,13 @@
+{
+  "schema": "wrong",
+  "campaign": "broken",
+  "system": "dnd-5e",
+  "session": -1,
+  "party": [
+    {"id": "ada", "name": "Ada", "stats": {"Strength": 10}, "resources": {"hp": {"current": 12, "max": 10}, "exhaustion": {"current": 7, "max": 9}}, "conditions": ["Sleepy"]},
+    {"id": "ada", "name": "Ada again"}
+  ],
+  "npcs": [{"id": "bob", "name": "Bob", "status": "zombified"}],
+  "clocks": [{"id": "c1", "name": "Clock", "segments": 4, "filled": 5}],
+  "threads": [{"id": "t1", "summary": "Why?", "status": "maybe"}]
+}

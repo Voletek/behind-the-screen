@@ -1,0 +1,17 @@
+# AI GM experiment log (copy to YYYY-MM-DD-<slug>.yml)
+date: YYYY-MM-DD
+author: ""
+assistant: ""          # e.g. Kiro, Claude, ChatGPT, Gemini, local model name
+model: ""              # model name/version as shown by the assistant
+system: ""             # systems/<id>
+mode: solo             # solo | group
+setup: |
+  What was loaded (bundle flags, steering, preferences) and any instruction being tested.
+hypothesis: ""
+observation: |
+  What happened. Quote short transcript excerpts (<= 5 lines each).
+sessions_tested: 1
+reproduced: false
+related_failure_mode: ""   # row number in references/AI_GM_FAILURE_MODES.md
+conclusion: ""
+next_step: ""

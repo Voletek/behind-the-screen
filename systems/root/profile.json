@@ -1,0 +1,17 @@
+{
+  "id": "root",
+  "name": "Root: The Roleplaying Game",
+  "license": "proprietary-summary",
+  "gm_title": "GM",
+  "dice": {
+    "mechanic": "pbta",
+    "default_expr": "pbta+0",
+    "bands": {"full": 10, "partial": 7}
+  },
+  "stats": ["Charm", "Cunning", "Finesse", "Luck", "Might"],
+  "stat_range": [-2, 3],
+  "resources": ["injury", "exhaustion", "depletion", "wear", "value"],
+  "resources_open": true,
+  "conditions": [],
+  "conditions_open": true
+}

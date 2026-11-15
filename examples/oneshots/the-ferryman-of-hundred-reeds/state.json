@@ -1,0 +1,35 @@
+{
+  "schema": "behind-the-screen/state@1",
+  "campaign": "the-ferryman-of-hundred-reeds",
+  "system": "root",
+  "session": 0,
+  "mode": "group",
+  "location": "Hundred Reeds, the muddy near bank",
+  "party": [
+    {"id": "tansy", "name": "Tansy Underbough", "player": "Kira", "concept": "Ranger (rabbit)", "stats": {"Charm": 0, "Cunning": 1, "Finesse": 1, "Luck": -1, "Might": 2},
+     "resources": {"injury": {"current": 0, "max": 4}, "exhaustion": {"current": 0, "max": 4}, "depletion": {"current": 0, "max": 4}}, "conditions": [], "inventory": ["Longbow", "Hunting knife"]},
+    {"id": "coin", "name": "Coin", "player": "Marcus", "concept": "Thief (raccoon)", "stats": {"Charm": 0, "Cunning": 1, "Finesse": 2, "Luck": 1, "Might": -1},
+     "resources": {"injury": {"current": 0, "max": 4}, "exhaustion": {"current": 0, "max": 4}, "depletion": {"current": 0, "max": 4}}, "conditions": [], "inventory": ["Lockpicks", "Dagger", "Dark cloak"]},
+    {"id": "wren", "name": "Brother Wren", "player": "Sam", "concept": "Arbiter (badger)", "stats": {"Charm": 1, "Cunning": 0, "Finesse": -1, "Luck": 0, "Might": 2},
+     "resources": {"injury": {"current": 0, "max": 4}, "exhaustion": {"current": 0, "max": 4}, "depletion": {"current": 0, "max": 4}}, "conditions": [], "inventory": ["Greatclub", "Prayer beads"]}
+  ],
+  "npcs": [
+    {"id": "gristle", "name": "Gristle the ferryman", "status": "missing", "disposition": "unknown", "location": "Reed maze (secret)"},
+    {"id": "mirelle", "name": "Captain Mirelle", "status": "alive", "disposition": "wary", "location": "Near bank"},
+    {"id": "kestrel", "name": "Envoy Kestrel", "status": "alive", "disposition": "unfriendly", "location": "Eyrie platform"},
+    {"id": "nettle", "name": "Old Nettle", "status": "alive", "disposition": "neutral", "location": "Reed maze"},
+    {"id": "pim", "name": "Pim", "status": "alive", "disposition": "wary", "location": "Hiding on the far bank"}
+  ],
+  "factions": [
+    {"id": "marquisate", "name": "The Marquisate", "standing": 0},
+    {"id": "eyrie", "name": "The Eyrie Dynasties", "standing": 0},
+    {"id": "alliance", "name": "The Woodland Alliance", "standing": 0}
+  ],
+  "clocks": [
+    {"id": "ferry-burns", "name": "The Marquisate's patience", "segments": 6, "filled": 1, "on_fill": "Mirelle burns the ferry", "visible": true},
+    {"id": "alliance-rising", "name": "Alliance fighters cross", "segments": 4, "filled": 0, "on_fill": "Uprising in Hundred Reeds", "visible": false}
+  ],
+  "threads": [
+    {"id": "find-gristle", "summary": "Where is Gristle, and why is the ferry closed?", "status": "open", "opened_session": 0}
+  ]
+}

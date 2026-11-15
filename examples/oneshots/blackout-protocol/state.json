@@ -1,0 +1,28 @@
+{
+  "schema": "behind-the-screen/state@1",
+  "campaign": "blackout-protocol",
+  "system": "marvel-multiverse",
+  "session": 0,
+  "mode": "group",
+  "location": "Rooftops above the cinema district, 9:14 p.m.",
+  "party": [
+    {"id": "kestrel", "name": "Kestrel", "concept": "Parkour vigilante", "stats": {"Melee": 2, "Agility": 4, "Resilience": 2, "Vigilance": 3, "Ego": 1, "Logic": 1},
+     "resources": {"health": {"current": 60, "max": 60}, "focus": {"current": 90, "max": 90}, "karma": {"current": 2, "max": 2}}, "conditions": [], "inventory": ["Kinetic boots", "Grapple line"]},
+    {"id": "ohm", "name": "Ohm", "concept": "Living circuit", "stats": {"Melee": 1, "Agility": 2, "Resilience": 3, "Vigilance": 2, "Ego": 2, "Logic": 3},
+     "resources": {"health": {"current": 90, "max": 90}, "focus": {"current": 60, "max": 60}, "karma": {"current": 2, "max": 2}}, "conditions": [], "inventory": ["Insulated work gloves", "Voltmeter"]},
+    {"id": "patchwork", "name": "Patchwork", "concept": "Street medic with a healing factor", "stats": {"Melee": 2, "Agility": 1, "Resilience": 4, "Vigilance": 2, "Ego": 3, "Logic": 1},
+     "resources": {"health": {"current": 120, "max": 120}, "focus": {"current": 60, "max": 60}, "karma": {"current": 2, "max": 2}}, "conditions": [], "inventory": ["Trauma kit", "Hospital badge"]}
+  ],
+  "npcs": [
+    {"id": "gloam", "name": "Gloam", "status": "alive", "disposition": "hostile", "location": "Dark skyscraper"},
+    {"id": "wattage", "name": "Wattage", "status": "alive", "disposition": "hostile", "location": "Substation"},
+    {"id": "recruit", "name": "Danny Ruiz (Lanternbearer recruit)", "status": "alive", "disposition": "wary", "location": "St. Agnes basement"}
+  ],
+  "clocks": [
+    {"id": "ventilators", "name": "St. Agnes battery", "segments": 4, "filled": 0, "on_fill": "The hospital loses patients", "visible": true},
+    {"id": "lanternbearers", "name": "The borough joins the Lanternbearers", "segments": 6, "filled": 1, "on_fill": "They hold the borough by morning", "visible": false}
+  ],
+  "threads": [
+    {"id": "who-cut-power", "summary": "Who caused the blackout, and why?", "status": "open", "opened_session": 0}
+  ]
+}
