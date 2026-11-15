@@ -21,7 +21,7 @@
 
 ## Dice without code
 
-Players roll physical or app dice and report. For GM rolls, choose one:
+Players roll their own physical or app dice and report; the GM asks and waits. For GM rolls, choose one:
 - A designated player rolls for the GM.
 - A dice bot in the same channel (Discord), logged as `"source": "dice-bot"`.
 - Declared simulation: the GM says "simulated roll" every time. Least fair; agree to it at session zero.

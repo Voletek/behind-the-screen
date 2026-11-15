@@ -8,10 +8,40 @@
     "default_expr": "1d20",
     "skill_expr": "1d100"
   },
-  "stats": ["IQ", "ME", "MA", "PS", "PP", "PE", "PB", "Spd"],
-  "stat_range": [1, 40],
-  "resources": ["hp", "sdc", "attacks_per_melee", "bio_e"],
+  "stats": [
+    "IQ",
+    "ME",
+    "MA",
+    "PS",
+    "PP",
+    "PE",
+    "PB",
+    "Spd"
+  ],
+  "stat_range": [
+    1,
+    40
+  ],
+  "resources": [
+    "hp",
+    "sdc",
+    "attacks_per_melee",
+    "bio_e"
+  ],
   "resources_open": true,
   "conditions": [],
-  "conditions_open": true
+  "conditions_open": true,
+  "creation": {
+    "methods": {
+      "random": {
+        "expr": "3d6",
+        "times": 8
+      }
+    },
+    "note": "Roll 3d6 per attribute (see the book for exceptional-score bonus dice); animal type and Bio-E per the book.",
+    "starting_resources": [
+      "hp",
+      "sdc"
+    ]
+  }
 }

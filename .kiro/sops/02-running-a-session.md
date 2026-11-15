@@ -10,7 +10,7 @@
 ## Prerequisites
 
 - Campaign files (or a one-shot) and the system profile
-- Dice source agreed
+- Dice agreed: players roll their own; GM world-roll source
 
 ## Procedure
 
@@ -18,7 +18,8 @@
 2. **Confirm three facts** with the players (location, key resource/condition, main open question).
 3. **Recap** in 3-5 bullets (group: a player recaps).
 4. **Strong start:** open in motion.
-5. **Loop each moment:** frame → ask a named player → listen → decide (roll?) → roll with `tools/roll.py` → narrate the change → record state.
+5. **Loop each moment:** frame (evenly, no leading) → ask a named player → listen → decide (roll?) → **roll request; the player rolls; wait** (GM rolls only the world, with `tools/roll.py`) → narrate the change → record state.
+5a. **Hints** only on `OOC: hint?`, one rung of the hint ladder at a time.
 6. **Scenes:** start late, leave early; alternate tension and release; spotlight check every 3-4 exchanges (group).
 7. **Combat/conflict:** use the profile's procedure; compact tracker after each round; end when the outcome is clear.
 8. **Safety:** honour any `X`/`/pause`/`/rewind` immediately.

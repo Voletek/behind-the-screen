@@ -32,6 +32,10 @@ Combat difficulty is set by the defender's bonuses.
 
 ## 3. Characters
 
+> Players build their own characters with `core/methodology/character-creation.md`; list this
+> system's creation methods with `python3 tools/character.py methods --system tmnt`.
+> Players roll their own dice for their characters (Tenet 5).
+
 - **Eight attributes:** I.Q. (intelligence), M.E. (mental endurance), M.A. (mental affinity),
   P.S. (physical strength), P.P. (physical prowess), P.E. (physical endurance), P.B. (physical beauty),
   Spd (speed). Exceptional scores give bonuses.

@@ -15,7 +15,8 @@
 
 1. Players post as `**Name (Character):** action`; `OOC:` for table talk.
 2. GM addresses one named player per prompt.
-3. Shared moments: collect declarations ("Got Lyra and Kael. Elara, you too?"), then resolve together.
+3. Shared moments: collect declarations ("Got Lyra and Kael. Elara, you too?"), send every roll request in one message, wait for all results, then resolve together.
+3a. Each player rolls their own dice; never roll for an absent-minded player without asking.
 4. Track spotlight per player in the session log; aim the next scene at the lowest.
 5. Split party: cut every 1-2 exchanges, end each cut on a hook.
 6. Secrets: private channel if available; otherwise vague public answers.

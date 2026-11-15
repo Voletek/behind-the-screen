@@ -29,6 +29,10 @@ There is no DC. Difficulty is set by **position in the fiction** and by what the
 
 ## 3. Characters
 
+> Players build their own characters with `core/methodology/character-creation.md`; list this
+> system's creation methods with `python3 tools/character.py methods --system root`.
+> Players roll their own dice for their characters (Tenet 5).
+
 - **Stats:** Charm, Cunning, Finesse, Luck, Might (typically −1 to +2, advancing to +3).
 - **Harm tracks:** Injury, Exhaustion, Depletion (boxes; when a track fills, the vagabond is taken out
   or suffers a lasting consequence, see book). Items have **Wear**.

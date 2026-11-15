@@ -69,8 +69,11 @@ Agree and record in `BIBLE.md` → `## Table Settings`:
 
 | Setting | Options | Default |
 |---|---|---|
-| Dice source | `tools/roll.py` / players roll / code interpreter / declared simulation | Tool if available, else players roll |
+| Player character rolls | Each player rolls their own (physical, app, bot, `tools/roll.py`) / GM rolls on request | Players roll their own |
+| GM (world) rolls source | `tools/roll.py` / code interpreter / dice bot / a designated player / declared simulation | Tool if available, else a designated player |
 | GM rolls | Open / hidden-but-logged | Open |
+| Targets (DC, TN) shown | Before the roll / after the roll / never | After (Mouse Guard Ob: before, as the book does) |
+| Hint level | Off / on request (`OOC: hint?`) / offered when stuck | On request |
 | Fudging | Never / GM may fudge hidden rolls (logged) | Never |
 | Narration length | Short / medium / lush | Short-medium (3-6 sentences per new scene) |
 | Options menus | Never / on request / always | On request |
@@ -79,15 +82,21 @@ Agree and record in `BIBLE.md` → `## Table Settings`:
 | Player-authored details | Encouraged / occasional / GM only | Occasional |
 | Save format | Files / Save Blocks | Files if the assistant can write them |
 
-## Step 6 — Characters
+## Step 6 — Characters (players make their own)
 
-1. Follow the system's character creation (profile → "Character Creation").
-2. For each PC record in `state.json`: name, player, concept, stats, resources, inventory, and in
-   `BIBLE.md` → `## Characters`: a goal, a bond with another PC or NPC, and a flaw or fear.
+1. Each player builds their character with `core/methodology/character-creation.md`: guided, one
+   step at a time, the player choosing everything and rolling any random stats themselves.
+   `tools/character.py new` creates the sheet and the `state.json` entry; `tools/character.py check`
+   checks it.
+2. For each PC record in `state.json`: name, player, concept, stats, resources, inventory, sheet; and
+   in `BIBLE.md` → `## Characters`: the player's goal, bond and flaw or fear.
 3. **Group:** connect the PCs. Each player answers one question about another PC
    ("Why does Kael trust you with his secret?").
 4. **Solo:** decide whether the PC has GM-run companions and record each in `npcs/`.
-5. Pregens for one-shots: offer them, let players tweak names and one detail.
+5. Pregens for one-shots: offer them as an option, never a requirement. Players may rename them,
+   change look, pronouns and personality, and swap one skill/trait/move/item (character-creation.md).
+6. **Rebuilds:** agree whether players may rebuild their character early in the campaign (default:
+   yes, once per arc).
 
 ## Step 7 — First-Session Hook
 
@@ -98,11 +107,12 @@ with a strong start (`core/methodology/running-the-game.md`).
 
 ## Short Version (one-shots, 5-10 minutes)
 
-1. System and pregens.
+1. System.
 2. Tone in one line + lethality.
 3. Lines and veils (always) + the X tool.
-4. Dice source.
-5. Go.
+4. Dice: players roll their own; how the GM rolls; targets shown or not.
+5. Pregens or quick custom characters (character-creation.md → fast mode).
+6. Go.
 
 ---
 

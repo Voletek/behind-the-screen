@@ -7,10 +7,33 @@
     "mechanic": "d616",
     "default_expr": "d616+0"
   },
-  "stats": ["Melee", "Agility", "Resilience", "Vigilance", "Ego", "Logic"],
-  "stat_range": [-3, 15],
-  "resources": ["health", "focus", "karma"],
+  "stats": [
+    "Melee",
+    "Agility",
+    "Resilience",
+    "Vigilance",
+    "Ego",
+    "Logic"
+  ],
+  "stat_range": [
+    -3,
+    15
+  ],
+  "resources": [
+    "health",
+    "focus",
+    "karma"
+  ],
   "resources_open": true,
   "conditions": [],
-  "conditions_open": true
+  "conditions_open": true,
+  "creation": {
+    "methods": {},
+    "note": "Rank sets the ability point budget; see the book.",
+    "starting_resources": [
+      "health",
+      "focus",
+      "karma"
+    ]
+  }
 }

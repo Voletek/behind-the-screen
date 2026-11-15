@@ -40,9 +40,17 @@
   "conditions": ["Poisoned"],
   "inventory": ["Longbow", "Quiver (14 arrows)", "Rope, 50 ft"],
   "goal": "Find out who opened the eastern gate",
+  "sheet": "characters/lyra.md",
+  "stat_method": "point_buy",
+  "base_stats": { "STR": 10, "DEX": 15, "CON": 14, "INT": 10, "WIS": 14, "CHA": 8 },
   "notes": ""
 }
 ```
+
+- `sheet` (optional): the player-owned sheet, relative to the campaign folder. If set, it must exist (FAIL).
+- `stat_method` (optional): the creation method from `systems/<id>/profile.json → creation.methods`;
+  `tools/character.py check` verifies it (standard array, point buy, spreads).
+- `base_stats` (optional): scores before species/background adjustments, used for the method check.
 
 - `stats` names come from `systems/<id>/profile.json` → `stats`. Unknown names WARN.
 - `resources` are tracks `{ "current": n, "max": n }` (optional `"min"`, default 0). `current > max`

@@ -10,6 +10,7 @@ Contents, in order:
   2. core/tenets.md                    priorities
   3. core/methodology/running-the-game.md, adjudication.md, state-keeping.md
   4. core/methodology/session-zero.md  (only when no campaign/one-shot is given)
+     core/methodology/character-creation.md (always: players make and change their own characters)
   5. core/methodology/npc-voice.md, encounter-design.md         (skipped with --lean)
   6. references/AI_GM_FAILURE_MODES.md, SAFETY_TOOLS_REFERENCE.md (skipped with --lean)
   7. systems/<id>/PROFILE.md
@@ -54,6 +55,7 @@ def build(args):
         parts.append(part(f"METHOD: {name}", f"core/methodology/{name}.md"))
     if not args.campaign and not args.oneshot:
         parts.append(part("METHOD: session-zero", "core/methodology/session-zero.md"))
+    parts.append(part("METHOD: character-creation", "core/methodology/character-creation.md"))
     if not args.lean:
         for name in ("npc-voice", "encounter-design"):
             parts.append(part(f"METHOD: {name}", f"core/methodology/{name}.md"))
@@ -86,6 +88,8 @@ def build(args):
         logs = sorted(p for p in glob.glob(os.path.join(c, "sessions", "*.md")) if cl.session_number(p) is not None)
         for p in logs[-args.sessions:] if args.sessions else []:
             parts.append(part("SESSION LOG", p))
+        for p in sorted(glob.glob(os.path.join(c, "characters", "*.md"))):
+            parts.append(part("CHARACTER SHEET", p))
         if not args.lean:
             for p in sorted(glob.glob(os.path.join(c, "npcs", "*.md"))):
                 parts.append(part("NPC SHEET", p))

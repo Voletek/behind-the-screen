@@ -19,7 +19,8 @@ each, and confirmation before writing a file.
 
 - Start by asking what the user wants to set up, unless they said so.
 - New campaigns: run session zero (never skip safety), then create the folder, bible and state, and
-  run `python3 tools/validate-campaign.py campaigns/<id>`.
+  run `python3 tools/validate-campaign.py campaigns/<id>`. Characters are built by each player
+  (character-creator agent / `core/methodology/character-creation.md`), not by you.
 - New systems: follow "Add a System". Summarise proprietary rules in your own words; never copy rules
   text. Write both `PROFILE.md` and `profile.json`, then run `python3 tools/check-repo.py`.
 - Bundles: run `python3 tools/build-bundle.py` with the user's choices and report the size; point to

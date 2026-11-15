@@ -17,7 +17,7 @@
 | 3 | Scene Framing | 8 | Openings ≤ 6 sentences ending on a prompt; one long description at the alcove |
 | 4 | Adjudication | 8 | Stakes stated before the fight; the miss on "stay calm" gave a condition, not a dead end |
 | 5 | Rules Fidelity | 8 | Strain house rule applied consistently; the critical at 12 used the profile's band |
-| 6 | Dice Honesty | 10 | All 6 rolls tool-sourced and logged, including the hidden Wits roll |
+| 6 | Dice Honesty | 10 | The player rolled all 5 of Rikan's rolls and posted the faces; the GM waited each time; the GM's hidden noticing roll was tool-rolled and logged |
 | 7 | NPC Voice | 7 | Goblins had no voice beyond snarls; Skrit got a name but no line yet |
 | 8 | World Consistency | 9 | Codex rules held (no prophecy, no name reveal, cost for Shard use) |
 | 9 | Spotlight Balance | 10 | Solo; no companion took over |
@@ -34,7 +34,8 @@
 | A3 | Anti-Sycophancy | 8 | The calm roll missed and stuck; the player still had an easy fight (two crits) |
 | A4 | State Discipline | 9 | State written at scene ends; Save could restart from files |
 | A5 | Prep Use | 9 | Book chapters used as situations; the prophecy scroll replaced per the Codex |
-| | **AI-GM composite** | **8.6** | |
+| A6 | No Leading | 8 | Descriptions weighted the water curtain evenly with the moss and river; one leading line before the transcript was corrected ("if you ask the walls, they might tell you its name" hinted at an action) |
+| | **AI-GM composite** | **8.5** | |
 
 ## Layer 3 — Continuity
 | # | Check | Result | Fix |
@@ -60,7 +61,8 @@
 ## Flags
 | Flag | Where | Issue | Instead, try |
 |---|---|---|---|
-| `WALL` | Scene 4 | Alcove description ~180 words | Lead with the water curtain and the glyphs; save the moss for a follow-up question |
+| `WALL` | Scene 4 | Alcove description ~180 words | Cut to 3-6 sentences; give the curtain, the glyphs and the moss equal weight |
+| `LEAD` | Scene 2 | "If you ask the walls, they might tell you its name" suggested an action | End on the goblin fleeing; let the player ask, if they want to |
 
 ## Recommendations (by impact)
 1. Give Skrit a voice line when he returns (third-person speech per prep) so walk-on → recurring lands.

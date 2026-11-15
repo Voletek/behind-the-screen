@@ -35,6 +35,10 @@ per weather/wilderness/animal threat. Use it.
 
 ## 3. Characters
 
+> Players build their own characters with `core/methodology/character-creation.md`; list this
+> system's creation methods with `python3 tools/character.py methods --system mouse-guard`.
+> Players roll their own dice for their characters (Tenet 5).
+
 - **Abilities:** Nature, Will, Health; **Resources** and **Circles** (social abilities).
 - **Skills:** many (e.g. Fighter, Pathfinder, Scout, Weather Watcher, Healer, Persuader, Survivalist,
   Loremouse, Orator…), rated 1-6. Use the exact list from the book.
@@ -93,6 +97,8 @@ with predators is deadly; clever avoidance is heroic.
 ## 10. AI GM Notes [Tier 3]
 
 - Models treat it like a d20 game ("roll Fighter, DC 12"). Use Ob and successes, never DCs.
+- Tell the player the skill, their dice and the Ob before they roll (help, gear, traits and wises
+  add dice; the player chooses whether to use them, and whether to spend Fate or Persona).
 - Remember the **GM's turn / players' turn** structure; models drift into free-form play.
 - Twists must be obstacles from the four categories, not random punishments.
 - Track **checks** earned in the GM's turn; they are the players' currency.

@@ -37,6 +37,10 @@ No target numbers. The **position** sets how bad a 7-9 or 6- can be:
 
 ## 3. Characters
 
+> Players build their own characters with `core/methodology/character-creation.md`; list this
+> system's creation methods with `python3 tools/character.py methods --system rules-light`.
+> Players roll their own dice for their characters (Tenet 5).
+
 - **Concept:** one line ("disgraced dwarven siege engineer", "mutant snapping turtle who runs a diner").
 - **Approaches (4):** Might, Grace, Wits, Heart. Assign +2, +1, +1, 0 (or +2, +2, 0, −1).
 - **Tags (3):** short phrases that justify edges ("Ratfolk tunnel-sense", "Ex-Custodian", "Knows

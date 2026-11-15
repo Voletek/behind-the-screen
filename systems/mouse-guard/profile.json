@@ -9,10 +9,40 @@
     "success_on": 4,
     "explode_expr": "4d6>=4!"
   },
-  "stats": ["Nature", "Will", "Health", "Resources", "Circles"],
-  "stat_range": [0, 7],
-  "resources": ["fate", "persona", "checks", "disposition"],
+  "stats": [
+    "Nature",
+    "Will",
+    "Health",
+    "Resources",
+    "Circles"
+  ],
+  "stat_range": [
+    0,
+    7
+  ],
+  "resources": [
+    "fate",
+    "persona",
+    "checks",
+    "disposition"
+  ],
   "resources_open": true,
-  "conditions": ["Healthy", "Hungry and Thirsty", "Angry", "Tired", "Injured", "Sick", "Dead"],
-  "conditions_open": false
+  "conditions": [
+    "Healthy",
+    "Hungry and Thirsty",
+    "Angry",
+    "Tired",
+    "Injured",
+    "Sick",
+    "Dead"
+  ],
+  "conditions_open": false,
+  "creation": {
+    "methods": {},
+    "note": "Abilities and skills come from the book's creation questions (rank, age, home, mentor, etc.).",
+    "starting_resources": [
+      "fate",
+      "persona"
+    ]
+  }
 }

@@ -16,7 +16,7 @@
 1. Read completely, no scoring.
 2. Map scenes, rolls, rulings, spotlight.
 3. Score 12 craft categories with evidence.
-4. Score 5 AI-GM assessments.
+4. Score 6 AI-GM assessments.
 5. Continuity layer (campaigns).
 6. Apply hard caps; compute composites; decision gate.
 7. Best moment; flags with alternatives; recommendations by impact.

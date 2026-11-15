@@ -28,6 +28,7 @@ validate = load("validate_campaign", "validate-campaign.py")
 encounter = load("encounter", "encounter.py")
 bundle = load("build_bundle", "build-bundle.py")
 checkrepo = load("check_repo", "check-repo.py")
+character = load("character", "character.py")
 
 
 def read(path):
@@ -139,6 +140,32 @@ class TestRoll(unittest.TestCase):
             self.assertEqual(entry["who"], "Ada")
             self.assertEqual(entry["session"], 3)
 
+    def test_player_reported_total(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "dice-log.jsonl")
+            code, out, _ = run(roll.main, ["1d20+5", "--total", "19", "--dc", "15", "--who", "Lyra", "--log", path])
+            self.assertEqual(code, 0)
+            self.assertIn("player's roll", out)
+            entry = json.loads(read(path).strip())
+            self.assertEqual(entry["source"], "player")
+            self.assertEqual(entry["outcome"], "success")
+            self.assertIsNone(entry["dice"])
+
+    def test_player_reported_total_pbta(self):
+        res = self.roll_json("pbta+2", "--total", "8")
+        self.assertEqual(res["outcome"], "partial success")
+
+    def test_request_does_not_roll_or_log(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "dice-log.jsonl")
+            code, out, err = run(roll.main, ["1d20+5", "--request", "--who", "Lyra", "--why", "Stealth",
+                                             "--dc", "15", "--stakes", "someone hears you", "--log", path])
+            self.assertEqual(code, 0)
+            self.assertIn("roll your dice", out)
+            self.assertNotIn("15", out)          # target stays with the GM
+            self.assertIn("DC 15", err)
+            self.assertFalse(os.path.exists(path))
+
     def test_seed_is_deterministic(self):
         a = self.roll_json("3d6", "--seed", "42")["total"]
         b = self.roll_json("3d6", "--seed", "42")["total"]
@@ -204,6 +231,81 @@ class TestValidateCampaign(unittest.TestCase):
         self.assertEqual(code, 0)
 
 
+class TestCharacter(unittest.TestCase):
+    def campaign(self, tmp):
+        import shutil
+        dst = os.path.join(tmp, "c")
+        shutil.copytree(os.path.join(FIX, "valid-campaign"), dst)
+        return dst
+
+    def test_new_and_check_point_buy(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c = self.campaign(tmp)
+            stats = ["STR=8", "DEX=15", "CON=14", "INT=10", "WIS=14", "CHA=10"]
+            argv = ["new", "--campaign", c, "--id", "lyra", "--name", "Lyra", "--player", "Kira", "--method", "point_buy"]
+            for st in stats:
+                argv += ["--stat", st]
+            self.assertEqual(run(character.main, argv)[0], 0)
+            self.assertTrue(os.path.exists(os.path.join(c, "characters", "lyra.md")))
+            code, out, _ = run(character.main, ["check", "--campaign", c, "--id", "lyra"])
+            self.assertEqual(code, 0, out)
+            state = json.loads(read(os.path.join(c, "state.json")))
+            self.assertEqual(state["party"][-1]["sheet"], "characters/lyra.md")
+            # validator agrees
+            self.assertEqual(run(validate.main, [c])[0], 0)
+
+    def test_point_buy_overspent_fails(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c = self.campaign(tmp)
+            argv = ["new", "--campaign", c, "--id", "max", "--name", "Max", "--method", "point_buy"]
+            for st in ["STR=15", "DEX=15", "CON=15", "INT=10", "WIS=10", "CHA=10"]:
+                argv += ["--stat", st]
+            run(character.main, argv)
+            code, out, _ = run(character.main, ["check", "--campaign", c, "--id", "max"])
+            self.assertEqual(code, 1)
+            self.assertIn("spent 33 of 27", out)
+
+    def test_standard_array_and_sheet_mismatch(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c = self.campaign(tmp)
+            argv = ["new", "--campaign", c, "--id", "sam", "--name", "Sam", "--method", "standard_array"]
+            for st in ["STR=15", "DEX=14", "CON=13", "INT=12", "WIS=10", "CHA=8"]:
+                argv += ["--stat", st]
+            run(character.main, argv)
+            self.assertEqual(run(character.main, ["check", "--campaign", c, "--id", "sam"])[0], 0)
+            sheet = os.path.join(c, "characters", "sam.md")
+            text = read(sheet).replace("- STR: 15", "- STR: 16")
+            with open(sheet, "w", encoding="utf-8") as fh:
+                fh.write(text)
+            code, out, _ = run(character.main, ["check", "--campaign", c, "--id", "sam"])
+            self.assertEqual(code, 1)
+            self.assertIn("STR is 16 on the sheet", out)
+
+    def test_unknown_stat_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c = self.campaign(tmp)
+            with self.assertRaises(SystemExit):
+                run(character.main, ["new", "--campaign", c, "--id", "x", "--name", "X", "--stat", "Strength=10"])
+
+    def test_missing_sheet_fails_validator(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c = self.campaign(tmp)
+            path = os.path.join(c, "state.json")
+            state = json.loads(read(path))
+            state["party"][0]["sheet"] = "characters/nobody.md"
+            with open(path, "w", encoding="utf-8") as fh:
+                json.dump(state, fh)
+            code, out, _ = run(validate.main, [c])
+            self.assertEqual(code, 1)
+            self.assertIn("character sheet", out)
+
+    def test_methods_listing(self):
+        code, out, _ = run(character.main, ["methods", "--system", "dnd-5e"])
+        self.assertEqual(code, 0)
+        self.assertIn("point_buy", out)
+        self.assertIn("4d6dl1", out)
+
+
 class TestEncounter(unittest.TestCase):
     def test_srd_budget_examples(self):
         # SRD 5.2.1 worked examples: 4 x level 1 low = 200; 5 x level 3 moderate = 1,125; 6 x level 15 high = 46,800
@@ -237,7 +339,8 @@ class TestBundleAndRepo(unittest.TestCase):
             self.assertEqual(code, 0)
             text = read(out)
             for needle in ("Game Master Boot Prompt", "Game Master Tenets", "Rules-Light Engine",
-                           "Fractured Shadows — Campaign Bible", "behind-the-screen/state@1", "Session 01"):
+                           "Fractured Shadows — Campaign Bible", "behind-the-screen/state@1", "Session 01",
+                           "Character Creation and Customization", "# Rikan Tunnelsprint", "Players roll their own dice"):
                 self.assertIn(needle, text)
             self.assertNotIn("Session Zero — Choosing the Game", text)
             self.assertIn("characters", err)

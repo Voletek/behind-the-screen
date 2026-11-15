@@ -10,7 +10,11 @@ description: This table's formatting and play preferences for the AI game master
 
 - **Narration length:** short-medium (3-6 sentences for a new scene, 1-3 when continuing).
 - **Speaker tags:** NPC dialogue as `**Name:** "…"`.
-- **Rolls:** always shown with the 🎲 result line from `tools/roll.py`.
+- **Player rolls:** players roll their own dice. The GM posts a 🎲 roll request
+  (`tools/roll.py … --request`) and waits for the result.
+- **GM rolls:** shown with the 🎲 result line from `tools/roll.py`.
+- **Targets (DC/TN):** revealed after the roll.
+- **Hints:** only on `OOC: hint?` (hint ladder in `core/methodology/running-the-game.md`).
 - **Mechanics:** in square brackets after the narration: `[Lyra −6 HP → 12/18]`.
 - **Status tracker:** after each combat round and at scene end, one line:
   `Round 3 | Kael 14/22 | Lyra 9/18 (Poisoned) | Ghoul A bloodied`.

@@ -15,7 +15,9 @@ AI game masters have predictable problems. Each one has an answer here:
 
 | Problem | Answer |
 |---|---|
-| The AI "rolls" a number it made up | `tools/roll.py`: real, logged dice for every system (Tenet 5) |
+| The AI "rolls" a number it made up, or rolls for you | **Players roll their own dice**; the GM sends a roll request and waits. GM rolls use `tools/roll.py` (Tenet 5) |
+| The AI builds your character for you | Guided creation where the player chooses and rolls; `tools/character.py` for sheets, checks and levelling |
+| The AI leads you to the answer | Information Discipline: even descriptions, open prompts, no suggested actions, hints only on `OOC: hint?` |
 | It forgets HP, NPCs and plot after a long chat | `state.json` + session logs + Save Blocks, and a validator (Tenet 8) |
 | It decides what your character feels and does | Player agency rule, and a review category that counts violations (Tenet 2) |
 | Every plan works | Stakes before rolls and a Failure Menu where failure moves the story |
@@ -33,13 +35,14 @@ AI game masters have predictable problems. Each one has an answer here:
 /session-zero                                → new campaign, guided
 "Run the Keeper of the Light one-shot"       → game-master with examples/oneshots/keeper-of-the-light
 "Continue Fractured Shadows"                 → game-master loads the campaign files
+"Make my character" / "Level up Lyra"        → character-creator (you choose, you roll)
 "Prep the next session"                      → session-planner (10-section brief)
 "Design a villain"                           → npc-designer
 "What does a 7-9 mean in Root?"              → rules-arbiter
 "Check continuity"                           → continuity-keeper
 "How did that session go?"                   → session-critic
 "We want to play Blades in the Dark"         → builder → Add a System
-/recap · /save-game · /quick-review          → manual commands
+/new-character · /level-up · /recap · /save-game · /quick-review   → manual commands
 ```
 
 **Claude, ChatGPT, Gemini, local models, Discord:** build one paste-able file, then follow the page
@@ -59,6 +62,9 @@ python3 tools/roll.py "5d6>=4" --ob 3                                  # Mouse G
 python3 tools/roll.py "pbta+2"                                         # Root / Rules-Light
 python3 tools/roll.py "d616+3" --tn 15 --edge 1                        # Marvel Multiverse
 python3 tools/roll.py "1d100" --under 45                               # TMNT skills
+python3 tools/roll.py "1d20+5" --total 19 --dc 15 --who Lyra          # log a roll the player made
+python3 tools/character.py new --campaign campaigns/my-campaign --id lyra --name Lyra --player Kira
+python3 tools/character.py check --campaign campaigns/my-campaign       # stats, method, sheet vs state
 python3 tools/validate-campaign.py campaigns/my-campaign                 # state, logs, bible
 python3 tools/encounter.py --party 4x3 --creatures "cr3,cr1/4x4"         # SRD 5.2.1 budget
 ```
@@ -83,14 +89,14 @@ authority. Add any other game with the builder ("Add a System", SOP 10).
 behind-the-screen/
 ├── core/
 │   ├── tenets.md                9 priorities (which rule wins)
-│   └── methodology/             10 canonical methods (SINGLE SOURCE OF TRUTH)
+│   └── methodology/             11 canonical methods (SINGLE SOURCE OF TRUTH)
 ├── systems/                     6 system profiles (PROFILE.md + profile.json) + template
 ├── references/                  11 data references (failure modes, safety, NPC voice, pacing,
 │                                tone library, improv tables, state format, systems comparison,
 │                                review rubric + template, campaign bible template)
-├── tools/                       roll.py · validate-campaign.py · encounter.py · build-bundle.py · check-repo.py
+├── tools/                       roll.py · character.py · validate-campaign.py · encounter.py · build-bundle.py · check-repo.py
 ├── portable/                    boot prompt, table preferences, Claude / ChatGPT / any-chat setup
-├── .kiro/                       7 agents · 8 steering · 5 skills · 2 hooks · 12 SOPs · 1 power
+├── .kiro/                       8 agents · 10 steering · 6 skills · 2 hooks · 13 SOPs · 1 power
 ├── examples/
 │   ├── campaigns/fractured-shadows/   full campaign from the novels, codex and album
 │   ├── oneshots/                5 one-shots, one per system
@@ -98,7 +104,7 @@ behind-the-screen/
 │   └── preferences/
 ├── campaigns/  oneshots/        YOUR work (empty)
 ├── experiments/ai-gm/           evidence logs for AI-behaviour claims
-├── tests/  .github/workflows/   33 unit tests + CI
+├── tests/  .github/workflows/   42 unit tests + CI
 ├── docs/ARCHITECTURE.md         layers, and the mapping from songwriting-kb
 └── GAMEMASTERING_KNOWLEDGE_BASE.md   the craft behind the method (16 sections)
 ```
@@ -117,8 +123,8 @@ behind-the-screen/
 locations · NPCs · threats · fronts and clocks · rewards · safety and tone.
 
 **Review** (`session-review.md`): 12 craft categories (agency, pacing, framing, adjudication, rules
-fidelity, dice honesty, NPC voice, world consistency, spotlight, tone, safety, fun) + 5 AI-GM
-assessments (no puppeting, concision, anti-sycophancy, state discipline, prep use).
+fidelity, dice honesty, NPC voice, world consistency, spotlight, tone, safety, fun) + 6 AI-GM
+assessments (no puppeting, concision, anti-sycophancy, state discipline, prep use, no leading).
 
 ## Solo and group play
 

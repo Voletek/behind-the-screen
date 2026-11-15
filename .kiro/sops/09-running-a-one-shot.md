@@ -14,7 +14,7 @@
 ## Procedure
 
 1. Pitch in one sentence; expected length.
-2. Pregenerated characters with links and reasons to be there.
+2. Pregenerated characters with links and reasons to be there, plus the option for players to build quick custom characters (SOP 13, fast mode) or tweak the pregens.
 3. Short safety check (session-zero.md → Short Version).
 4. Strong start; 5-8 scenes as situations; 10 clues.
 5. One guaranteed climax reachable from anywhere; 2-3 endings.

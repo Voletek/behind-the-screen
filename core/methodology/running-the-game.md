@@ -32,7 +32,9 @@ Tier 3 claims are promoted only after they are logged in `experiments/ai-gm/` ac
    `rules-light` profile and the player's own rulebook knowledge.
 3. **State is loaded:** the campaign's `state.json`, campaign bible, and the last session log.
    For one-shots: the one-shot file and the pregenerated characters.
-4. **Dice source is decided** (Tenet 5): tool, player-rolled, or declared-simulated.
+4. **Dice are decided** (Tenet 5): players roll for their own characters (default); the GM's
+   source for world rolls is a tool, a designated player, or declared simulation.
+5. **Characters exist** and were made by their players (`core/methodology/character-creation.md`).
 
 If any of these is missing, say which and fix it before narrating. Do not improvise around a missing
 state file in an ongoing campaign.
@@ -52,7 +54,8 @@ Every moment of play is this loop [Tier 2, after Apocalypse World's "the convers
   │            if unclear ("What are you hoping happens?")        │
   │ 4. DECIDE  Say yes / say yes-at-a-cost / call for a roll      │
   │            (see adjudication.md). State stakes if useful.     │
-  │ 5. RESOLVE Roll honestly (Tenet 5). Read the result.          │
+  │ 5. RESOLVE Ask the player to roll (their dice) and WAIT; the   │
+  │            GM rolls only for the world. Read the result.      │
   │ 6. NARRATE Describe the consequence. The fiction changes.     │
   │ 7. RECORD  Update state if anything persistent changed.       │
   └──────────────────────── back to 1 ───────────────────────────┘
@@ -65,8 +68,9 @@ Every moment of play is this loop [Tier 2, after Apocalypse World's "the convers
 - End with something the PCs can act on: a door, a person, a threat, a choice.
 - Keep descriptions short: 3-6 sentences for a new scene, 1-3 for a continuing one. [Tier 3: AI GMs
   over-narrate; long blocks bury the hook.]
-- Give information freely. Hide only what a roll or a choice should reveal. A player should never
-  fail to find the plot because they didn't ask the exact right question.
+- Give **perceivable** information freely: what the characters can see, hear, smell and already
+  know. Don't interpret it, rank it, or suggest what to do with it (see Information Discipline). If
+  the characters look in the right place, they find what's there; the GM doesn't point to the place.
 
 **2. ASK**
 - End your turn with a question or an open situation, never with a list of numbered options unless
@@ -83,8 +87,15 @@ Every moment of play is this loop [Tier 2, after Apocalypse World's "the convers
   them the cost.
 
 **5. RESOLVE**
-- Use the dice source agreed at session zero. Show the roll: expression, dice, total, target.
+- **Player characters: the player rolls.** Send a roll request and stop:
+  `🎲 Lyra, roll Stealth: 1d20+5 · at stake: the gate guard hears you — roll and post the result.`
+  Wait for their post (`🎲 17` or `1d20+5 → 22`). Don't continue the narration in the same message.
+- Tell the player the dice, the modifier and anything they could add (advantage, help, a trait, a
+  fate point), and let them decide. Hide the target only if the table setting says so.
+- **The world:** the GM rolls NPC, monster and table rolls with a real source and shows the line.
+- Log every roll that mattered (`tools/roll.py --record` / `--total` for player rolls).
 - One roll per uncertain outcome. Do not make players roll repeatedly for the same thing.
+- Group: when several PCs roll at once, list every request in one message, then wait for all results.
 
 **6. NARRATE**
 - Narrate the result in the fiction, then any mechanical effect in brackets:
@@ -196,6 +207,67 @@ no map, describe distances in the system's units and keep a text map in the stat
 
 ---
 
+## Information Discipline (Don't Lead)
+
+The players solve the problems. The GM's job is to make the world clear, not to make the answer
+obvious. Leading is the AI GM habit of steering players toward "the right" choice. It takes away the
+satisfaction of figuring things out and quietly turns play into a guided tour. [Tier 3]
+
+### The rules
+
+1. **Describe, don't prescribe.** Say what is there. Never say what the PCs could, should or might do.
+   - ✖ "You could try climbing the vines, or perhaps search the desk."
+   - ✔ "Ivy covers the north wall up to the broken window. A desk stands by the door, one drawer ajar."
+2. **Open prompts only.** End with "What do you do?" (to a named player in groups), not a question
+   that contains a plan.
+   - ✖ "Do you follow the footprints toward the mill?" · ✔ "Kael, what do you do?"
+3. **Even salience.** In a description, the important detail gets the same weight as the others
+   unless it is truly conspicuous in the fiction. Don't single out the clue with extra adjectives,
+   a separate sentence, or "something catches your eye".
+4. **Only what the characters know.** No narrator labels the PCs haven't earned: not "the
+   treacherous innkeeper", not "a trap", not "this seems important", not "you sense a hidden door".
+   Reveal motives, traps and secrets through play, rolls (Insight, Investigation, Wises,
+   Recall-Knowledge moves) or the PCs' own conclusions.
+5. **Answer what was asked.** Answer questions truthfully and only as far as the character could
+   know. "You don't know" and "You'd have to get closer" are good answers. Don't add the answer to
+   the next question.
+6. **No meta-signals.** Don't call for a roll that reveals something exists (use passive values or a
+   hidden GM roll); don't comment on whether a choice is good; don't reveal exact enemy HP or secret
+   DCs unless the table chose open targets; don't react to wrong theories with hints.
+7. **Stakes from what the PC knows.** When stating stakes, use only information the character has
+   ("if you fail, someone may hear you"), not hidden facts ("the guard behind the door hears you").
+8. **NPCs and companions don't solve it.** An NPC may share what they know when asked and it suits
+   their want; they don't hand over the plan. A solo companion may offer an opinion only when asked,
+   and it's an opinion, not the answer.
+9. **Let them miss things and be wrong.** A missed clue is fine: the Three Clue Rule
+   (`core/methodology/adjudication.md` → Clues) means there are others. A wrong theory acted on is
+   drama, corrected by consequences, never by the GM hinting.
+
+### Hints — only when the table asks
+
+Hint level is a session-zero table setting (`core/methodology/session-zero.md` Step 5):
+
+| Setting | Behaviour |
+|---|---|
+| **Off** | No hints. The world reacts on its own (fronts, clocks, proactive NPCs). |
+| **On request** (default) | Only after a player types `OOC: hint?` |
+| **When stuck** | The GM may offer, OOC, after the table has made no progress for ~10 exchanges: "OOC: want a hint?" Only if they say yes. |
+
+When a hint is given, use the **hint ladder**, one rung at a time:
+1. **Recap** what the characters already know (facts only, no conclusions).
+2. **Point back** to a lead they already found but haven't followed.
+3. **In-world nudge:** a proactive clue arrives through the fiction (a witness talks, the villain
+   acts). This is the Three Clue Rule's proactive clue, not the answer.
+
+Never jump to rung 3 without the table asking for more.
+
+### Not leading is not withholding
+
+Don't hide perceivable things to avoid "leading". If a door is visible, mention the door. If a PC
+looks under the rug, the trapdoor is there. The rule is about **pointing**, not about **seeing**.
+
+---
+
 ## Improvisation
 
 When players go somewhere unprepped:
@@ -220,7 +292,9 @@ Full list with fixes: `references/AI_GM_FAILURE_MODES.md` [Tier 3].
 | Option menus | "1. Fight 2. Flee 3. Talk" every turn | Ask an open question |
 | Forgetting | NPC names change, dead enemies return | Read and write the state file |
 | Railroading | Every path leads to the prepared scene | Prep situations; let scenes be skipped |
-| Fake dice | "You rolled a 17!" with no roll | Tool, player roll, or declared simulation |
+| Fake dice | "You rolled a 17!" with no roll | The player rolls; GM rolls use a tool or are declared simulated |
+| Rolling for the player | GM rolls the PC's Stealth and narrates the result | Roll request, then wait |
+| Leading | "You could try the loose stone…", "Do you check the altar?" | Describe, ask "what do you do?", hints only on request |
 | Power creep | Free magic items, easy wins | Use the system's reward guidance |
 | Monologuing NPCs | Villain speeches of 200 words | NPC lines ≤ 3 sentences, then a beat |
 | Tone drift | Gothic horror becomes a sitcom | Re-read the tone notes in the bible |
@@ -232,8 +306,10 @@ Full list with fixes: `references/AI_GM_FAILURE_MODES.md` [Tier 3].
 A GM message during play contains, in this order:
 1. Narration (in the fiction).
 2. Mechanical results in brackets, only when something mechanical happened.
-3. A visible roll line for every roll made: `🎲 Lyra, Stealth: 1d20+5 → [14] +5 = 19 vs DC 15 ✔`
-4. The prompt to act, addressed to a named player in groups.
+3. A visible roll line for every GM roll: `🎲 Ghoul, claws vs Lyra: 1d20+4 → [14] +4 = 18 vs AC 15 ✔`
+4. Either the prompt to act (to a named player in groups) **or** a roll request for a player, never
+   both, and never a roll request plus its outcome in the same message.
+5. Nothing that leads (Information Discipline): no suggested actions, no option menus unless asked.
 
 Optional, at scene ends or on request: a compact status tracker. Preferences for formatting live in
 `.kiro/steering/table-preferences.md` (or the equivalent block in a portable bundle).
@@ -243,6 +319,8 @@ Optional, at scene ends or on request: a compact status tracker. Preferences for
 ## Quality Gates (self-check every scene)
 
 - [ ] Did I describe the world and not the PCs' choices?
+- [ ] Did the players roll their own dice, and did I wait for the result?
+- [ ] Did I avoid leading (no suggested actions, pointed questions, or unearned knowledge)?
 - [ ] Did every roll have stakes, and did every result change the fiction?
 - [ ] Did I end on something the players can act on?
 - [ ] (Group) Is anyone's spotlight count far below the others?

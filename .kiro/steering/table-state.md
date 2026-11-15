@@ -9,19 +9,30 @@ description: Honest dice and state-file rules for AI game masters - how to roll 
 
 ## Dice (Tenet 5)
 
-Roll every uncertain outcome with the tool and paste its line:
+**Player characters: the player rolls.** Post a request and wait:
 
 ```bash
-python3 tools/roll.py "1d20+5" --dc 15 --who Lyra --why "Stealth past the gate" --session 3 --log campaigns/<id>/dice-log.jsonl
-python3 tools/roll.py "5d6>=4" --ob 3 --who Sorrel --why "Pathfinder across the bridge"   # Mouse Guard
-python3 tools/roll.py "pbta+2" --who Tansy --why "Persuade an NPC"                       # Root / Rules-Light
-python3 tools/roll.py "d616+3" --tn 15 --edge 1 --who Kestrel --why "Leap the gap"       # Marvel
-python3 tools/roll.py "1d100" --under 45 --who Hex --why "Pick locks"                    # TMNT skills
-python3 tools/roll.py "1d20+3" --record 14 --dc 12 --who Oona                            # log a player's physical roll
+python3 tools/roll.py "1d20+5" --request --who Lyra --why "Stealth" --dc 15 --stakes "someone may hear you"
+# then log what they post:
+python3 tools/roll.py "1d20+5" --record 14 --dc 15 --who Lyra --why "Stealth" --session 3 --log campaigns/<id>/dice-log.jsonl
+python3 tools/roll.py "1d20+5" --total 19 --dc 15 --who Lyra --why "Stealth" --session 3 --log campaigns/<id>/dice-log.jsonl
+```
+
+Players can roll with physical dice, an app, a bot, or run `tools/roll.py` themselves. Roll for a PC
+only if that player asks.
+
+**The world: the GM rolls** with the tool and pastes the line:
+
+```bash
+python3 tools/roll.py "1d20+4" --ac 15 --who "Ghoul" --why "claws vs Lyra" --session 3 --log campaigns/<id>/dice-log.jsonl  # 5e monster
+python3 tools/roll.py "4d6>=4" --who "Heron" --why "Nature vs the patrol"                # Mouse Guard animal
+python3 tools/roll.py "d616+4" --tn 14 --who "Wattage" --why "punch vs Kestrel"           # Marvel villain
+python3 tools/roll.py "1d20+2" --who "Gang thug" --why "strike vs Dozer"                  # TMNT
+python3 tools/roll.py "1d12" --who GM --why "complication table"                          # any table
 ```
 
 - Hidden rolls: add `--hidden`; still logged.
-- Never invent a number. If no shell is available, ask the player to roll, or declare "simulated".
+- Never invent a number. If no shell is available, ask a designated player to roll for the GM, or declare "simulated".
 
 ## State (Tenet 8)
 

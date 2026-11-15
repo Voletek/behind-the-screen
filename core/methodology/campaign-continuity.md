@@ -17,7 +17,7 @@ scene (Tenet 8). Required sections:
 | 1 | `## Premise` | One-sentence thesis + one paragraph |
 | 2 | `## Tone` | Tone line, touchstones, lethality, humour, romance |
 | 3 | `## Safety` | Lines, veils, in-play tool, check-in agreements |
-| 4 | `## Table Settings` | Dice source, hidden rolls, fudging, narration length, options menus |
+| 4 | `## Table Settings` | Who rolls (players roll their own), GM dice source, hidden rolls, targets shown, hint level, fudging, narration length, options menus, rebuilds |
 | 5 | `## House Rules` | Each with the session it was adopted |
 | 6 | `## Characters` | Each PC: goal, bond, flaw/fear, player |
 | 7 | `## Setting Canon` | Places, history, cosmology: only what matters |

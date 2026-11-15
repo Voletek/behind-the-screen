@@ -24,6 +24,8 @@ campaigns/<campaign-id>/
 ├── BIBLE.md                  Campaign bible: premise, tone, safety, house rules, canon, factions
 ├── state.json                Live state (schema: behind-the-screen/state@1)
 ├── dice-log.jsonl            Every logged roll, one JSON object per line (tools/roll.py --log)
+├── characters/
+│   └── <pc-id>.md            Player-owned character sheets (core/methodology/character-creation.md)
 ├── sessions/
 │   └── session-01.md         Session logs (required headings below)
 ├── prep/
@@ -149,9 +151,10 @@ Every roll that mattered is a line in `dice-log.jsonl`. `tools/roll.py --log <fi
  "source": "tools/roll.py", "hidden": false, "fudged": false}
 ```
 
-- `source` records where randomness came from: `tools/roll.py`, `player`, `code-interpreter`,
-  `simulated`.
-- Players' physical rolls are logged with `"source": "player"` (`tools/roll.py --record`).
+- `source` records where randomness came from: `player`, `tools/roll.py`, `code-interpreter`,
+  `dice-bot`, `simulated`.
+- Players roll their own characters' dice (Tenet 5). Log them with `"source": "player"`:
+  `tools/roll.py "<expr>" --record "<faces>"` when they post faces, or `--total <n>` when they post a total.
 - `fudged: true` only if the table allowed fudging at session zero (Tenet 5), and still logged.
 
 ---
