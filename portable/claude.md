@@ -15,10 +15,11 @@
 
 ## Dice
 
-- If code execution (the analysis tool) is enabled, ask the GM to roll with code and show the result.
-  You can upload `tools/roll.py` to the project and ask it to follow that logic.
-- Otherwise, use **player-rolled dice**: tell the GM at session zero "We'll roll physical dice and
-  report results; you ask us to roll for NPCs too."
+- **Players roll their own dice** (physical, an app, or `tools/roll.py`) and post results; the GM
+  sends a roll request and waits.
+- For the GM's rolls (NPCs, monsters, tables): if code execution (the analysis tool) is enabled, ask
+  the GM to roll with code and show the result. You can upload `tools/roll.py` to the project.
+  Otherwise, tell the GM at session zero "One of us will roll for the NPCs too."
 
 ## Tips
 

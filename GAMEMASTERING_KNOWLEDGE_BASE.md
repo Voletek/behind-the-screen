@@ -178,7 +178,9 @@ repo answers them:
 
 | Weakness | Repo answer |
 |---|---|
-| Can't produce randomness | `tools/roll.py`, player rolls, declared simulation (Tenet 5) |
+| Can't produce randomness | Players roll their own dice; GM rolls via `tools/roll.py` or declared simulation (Tenet 5) |
+| Steers players to "the answer" | Information Discipline and the hint ladder (running-the-game.md); review A6 |
+| Builds the character for the player | Player-owned creation (character-creation.md); `tools/character.py` |
 | Forgets long chats | `state.json`, session logs, Save Blocks (Tenet 8) |
 | Pleases the user | Failure Menu, stakes before rolls, review A3 |
 | Narrates for the player | Tenet 2, review A1 |
@@ -197,6 +199,11 @@ dice, and calling `OOC:` corrections. It works well for new tables. [Tier 3]
 **Every GM turn:** narration · [mechanics] · 🎲 lines · prompt to a named player.
 
 **Should I roll?** Uncertain + interesting failure → roll. Otherwise say yes, or say the cost.
+
+**Who rolls?** The player, for their character. Send a roll request, then wait. The GM rolls the world.
+
+**Am I leading?** Did I suggest an action, ask a question with a plan in it, single out a clue, or
+say something the characters don't know? Cut it, end on "What do you do?".
 
 **On a failure:** harm · cost · complication · worse position · reveal a threat · tick a clock ·
 separate them · hard bargain · turn their move back · plain failure (rarely).

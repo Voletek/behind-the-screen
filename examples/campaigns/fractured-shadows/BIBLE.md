@@ -60,13 +60,17 @@ that punishes every use of power?**
 
 | Setting | Choice |
 |---|---|
-| Dice source | `tools/roll.py` (Kiro) / code interpreter / player rolls; never silent simulation |
+| Player character rolls | The player rolls their own dice and posts the faces; the GM logs them (`--record`) |
+| GM (world) rolls | `tools/roll.py` (Kiro) / code interpreter; never silent simulation |
+| Targets shown | After the roll |
+| Hint level | On request (`OOC: hint?`) |
 | GM rolls | Open, except hidden Wits checks for noticing (logged, `hidden: true`) |
 | Fudging | Never |
 | Narration length | Short-medium; a new region gets one longer description |
 | Option menus | On request only |
 | Stakes before rolls | Usually |
 | Player-authored details | Occasional (Ratfolk customs, Freehold life) |
+| Rebuilds | Allowed once per arc |
 | Save format | Files (Kiro) or Save Blocks |
 
 ## 5. House Rules

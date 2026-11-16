@@ -21,7 +21,7 @@ systems/           ← Rules layer (one profile per RPG)
 .kiro/powers/      ← Activatable bundle
 ```
 
-## Steering (8)
+## Steering (10)
 
 | File | Inclusion | What It Does | Customize? |
 |---|---|---|---|
@@ -33,14 +33,17 @@ systems/           ← Rules layer (one profile per RPG)
 | `recap.md` | `manual` | `/recap` | No |
 | `save-game.md` | `manual` | `/save-game` | No |
 | `quick-review.md` | `manual` | `/quick-review` | No |
+| `new-character.md` | `manual` | `/new-character` | No |
+| `level-up.md` | `manual` | `/level-up` | No |
 
 Front matter must be the very first bytes of a steering file.
 
-## Agents (7 thin wrappers)
+## Agents (8 thin wrappers)
 
 | Agent | Invoke With | Loads |
 |---|---|---|
 | `game-master` | "Be my DM", "let's play", "continue the campaign" | `running-the-game.md`, `adjudication.md`, `state-keeping.md` |
+| `character-creator` | "Make my character", "level up", "tweak the pregen" | `character-creation.md` |
 | `session-planner` | "Prep the next session", "plan a one-shot" | `session-prep.md`, `encounter-design.md` |
 | `rules-arbiter` | "How does this rule work?", "what's the DC?" | `adjudication.md`, `SYSTEMS_COMPARISON.md` |
 | `npc-designer` | "Design a villain", "make an NPC" | `npc-voice.md` |
@@ -63,15 +66,16 @@ core rules into the main chat.
 - Campaign-specific hooks: copy `examples/campaigns/<id>/continuity-hook.json` to
   `.kiro/hooks/<id>-continuity.json`.
 
-## Skills (5)
+## Skills (6)
 
-`system-profiles`, `npc-voice`, `encounter-design`, `safety-tools`, `campaign-bible`.
+`system-profiles`, `character-creation`, `npc-voice`, `encounter-design`, `safety-tools`, `campaign-bible`.
 
-## SOPs (12)
+## SOPs (13)
 
 01 Session Zero · 02 Running a Session · 03 Prepping a Session · 04 Setting Up a Campaign ·
 05 Extending a Campaign · 06 Designing an NPC · 07 Reviewing a Session · 08 Contributing ·
-09 Running a One-Shot · 10 Adding a System · 11 Group Play · 12 Playing in Other AIs
+09 Running a One-Shot · 10 Adding a System · 11 Group Play · 12 Playing in Other AIs ·
+13 Creating and Customizing a Character
 
 ## Customization Priority
 

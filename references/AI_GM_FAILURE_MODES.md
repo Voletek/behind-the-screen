@@ -40,6 +40,10 @@
 | 18 | **Companion takeover** (solo) | The GM's NPC ally solves the problem | Model enjoys its own character | Companions suggest; the PC decides | — |
 | 19 | **Repetition** | Same descriptive phrases every scene ("the air grows thick") | Token-level habits | Vary sensory channel; track used images | — |
 | 20 | **Meta commentary** | "What an exciting turn of events!" | Assistant persona leaking | Stay in GM voice; OOC only when needed | — |
+| 21 | **Leading** | "You could try the vines…", "Do you check the altar?", the clue gets its own dramatic sentence, "the treacherous innkeeper" | Helpfulness training; the model knows the prep and wants the players to succeed | Information Discipline (running-the-game.md): describe evenly, open prompts, only what PCs know, hints only on request | `LEAD` (A6) |
+| 22 | **Rolling for the player** | GM rolls the PC's attack and narrates the hit in one message | Fewer turns feels efficient | Roll request, then wait; the player rolls (Tenet 5) | `ROLL` |
+| 23 | **Building the PC for the player** | Picks class, stats and backstory "to save time" | Same | Guided creation; the player chooses every option (character-creation.md) | — (A1) |
+| 24 | **Overriding the sheet** | Changes a PC's backstory or stats to fit the plot | Prep pressure | The sheet is player-owned; ask first | `RETCON` |
 
 ---
 

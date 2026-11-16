@@ -34,6 +34,10 @@ The tool rerolls the lowest die for an edge (keeping the better) and the highest
 
 ## 3. Characters
 
+> Players build their own characters with `core/methodology/character-creation.md`; list this
+> system's creation methods with `python3 tools/character.py methods --system marvel-multiverse`.
+> Players roll their own dice for their characters (Tenet 5).
+
 - **Abilities (the "MARVEL" acronym):** Melee, Agility, Resilience, Vigilance, Ego, Logic. Each has a
   matching defense score.
 - **Rank** (1-6: from street-level to cosmic) sets power budget and **Karma**.

@@ -37,6 +37,7 @@
 | A3 | Anti-Sycophancy | | |
 | A4 | State Discipline | | |
 | A5 | Prep Use | | |
+| A6 | No Leading | | |
 | | **AI-GM composite** | **x.x** | |
 
 ## Layer 3 — Continuity (campaigns only)

@@ -25,7 +25,9 @@ Targets
 
 Other
   --edge N / --trouble N     d616 edges and troubles (cancel one for one)
-  --record "14,3"            log a PLAYER's physical roll instead of rolling (source: player)
+  --record "14,3"            log a PLAYER's own dice (faces) instead of rolling (source: player)
+  --total N                  log a total the PLAYER reported (no faces given); judged vs the target
+  --request                  don't roll: print a roll request for the player to roll themselves
   --who, --why, --session    context for the log line
   --log FILE                 append a JSON line to FILE (campaigns/<id>/dice-log.jsonl)
   --hidden                   mark the roll hidden (still logged)
@@ -295,7 +297,10 @@ def main(argv=None):
         p.add_argument(f"--{name}", type=int)
     p.add_argument("--edge", type=int, default=0)
     p.add_argument("--trouble", type=int, default=0)
-    p.add_argument("--record", help="comma-separated values from a player's physical roll")
+    p.add_argument("--record", help="comma-separated faces from a player's own roll")
+    p.add_argument("--total", type=int, help="a total the player reported (their own dice)")
+    p.add_argument("--request", action="store_true", help="print a roll request for the player instead of rolling")
+    p.add_argument("--stakes", help="with --request: what failure costs (only what the character knows)")
     p.add_argument("--who")
     p.add_argument("--why")
     p.add_argument("--session", type=int)
@@ -306,6 +311,47 @@ def main(argv=None):
     p.add_argument("--times", type=int, default=1)
     p.add_argument("--json", action="store_true")
     args = p.parse_args(argv)
+
+    if args.request:
+        target = next(((n.upper(), getattr(args, n)) for n in ("dc", "ac", "tn", "ob", "under") if getattr(args, n) is not None), None)
+        who = args.who or "Player"
+        line = f"🎲 {who}, roll {args.why or 'it'}: {args.expr}"
+        if args.edge or args.trouble:
+            line += f" (edge {args.edge}, trouble {args.trouble})"
+        if args.stakes:
+            line += f" · at stake: {args.stakes}"
+        line += " — roll your dice and post the result."
+        print(line)
+        if target:
+            print(f"(GM only: target {target[0]} {target[1]}; reveal after the roll unless the table shows targets first)", file=sys.stderr)
+        return 0
+
+    if args.total is not None:
+        res = judge({"kind": "pool" if ">=" in args.expr else "sum", "terms": [{"term": args.expr, "dice": []}],
+                     "modifier": 0, "total": args.total}, args)
+        if args.expr.lower().startswith("pbta"):
+            res["kind"] = "pbta"
+            res = judge(res, args)
+        entry = {
+            "ts": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "session": args.session, "who": args.who, "why": args.why, "expr": args.expr, "dice": None,
+            "total": args.total, "target": res["target"]["value"] if res.get("target") else None,
+            "outcome": res.get("outcome"), "note": "player-reported total", "source": "player",
+            "hidden": args.hidden, "fudged": args.fudged,
+        }
+        if args.log:
+            with open(args.log, "a", encoding="utf-8") as fh:
+                fh.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        if args.json:
+            print(json.dumps({**res, "log": entry}, ensure_ascii=False))
+        else:
+            line = f"🎲 {args.who or 'Player'}, {args.why or args.expr}: {args.expr} → {args.total} (player's roll)"
+            if res.get("target"):
+                line += f" vs {res['target']['type']} {res['target']['value']}" if res["target"]["type"] != "under" else f" ≤ {res['target']['value']}"
+            if res.get("outcome"):
+                line += f" {res['outcome']}"
+            print(line)
+        return 0
 
     recorded = None
     if args.record:

@@ -12,61 +12,196 @@
       "name": "Rikan Tunnelsprint",
       "player": "Voletek",
       "concept": "Ratfolk rogue with a stranger's mind behind his eyes",
-      "stats": { "Might": 0, "Grace": 2, "Wits": 1, "Heart": 1 },
-      "tags": ["Ratfolk tunnel-sense", "I coded this (unreliable)", "Shard-bearer"],
-      "resources": {
-        "harm": { "current": 1, "max": 4 },
-        "strain": { "current": 2, "max": 6 },
-        "xp": { "current": 2, "max": 5 }
+      "stats": {
+        "Might": 0,
+        "Grace": 2,
+        "Wits": 1,
+        "Heart": 1
       },
-      "conditions": ["Shaken by the first kill (bane on Heart rolls to stay calm until he rests)"],
+      "tags": [
+        "Ratfolk tunnel-sense",
+        "I coded this (unreliable)",
+        "Shard-bearer"
+      ],
+      "resources": {
+        "harm": {
+          "current": 1,
+          "max": 4
+        },
+        "strain": {
+          "current": 2,
+          "max": 6
+        },
+        "xp": {
+          "current": 2,
+          "max": 5
+        }
+      },
+      "conditions": [
+        "Shaken by the first kill (bane on Heart rolls to stay calm until he rests)"
+      ],
       "inventory": [
         "Obsidian Shard (pulsing, warm)",
         "Rusty goblin blade",
         "Scrap of oiled cloth",
         "Custodian warning-glyph tablet (rubbing, charcoal on cloth)"
       ],
-      "marks": ["Mark of Balance (chest; glows with emotion)"],
+      "marks": [
+        "Mark of Balance (chest; glows with emotion)"
+      ],
       "goal": "Get out of the Whispering Caves alive and find out what the Shard is",
-      "notes": "Developer's memory used once in session 1 (the river route); not yet refreshed."
+      "notes": "Developer's memory used once in session 1 (the river route); not yet refreshed.",
+      "sheet": "characters/rikan.md",
+      "stat_method": "spread_a"
     }
   ],
   "npcs": [
-    { "id": "skrit", "name": "Skrit (goblin)", "status": "alive", "disposition": "wary",
-      "location": "Black Mire", "notes": "Fled the first fight; Rikan let him go. Knows the Mire paths." },
-    { "id": "goblin-leader", "name": "Goblin leader", "status": "dead", "location": "Whispering Caves, first chamber" },
-    { "id": "goblin-spear", "name": "Goblin with the broken spear", "status": "dead", "location": "Whispering Caves, first chamber" },
-    { "id": "alaric", "name": "Alaric Dawnwatcher", "status": "alive", "disposition": "unknown",
-      "location": "Dawnwatch", "sheet": "npcs/alaric.md", "notes": "Not yet met." },
-    { "id": "lyra", "name": "Lyra", "status": "alive", "disposition": "unknown",
-      "location": "Fractured Plains (Freehold patrols)", "sheet": "npcs/lyra.md", "notes": "Not yet met. Solo-mode companion candidate." },
-    { "id": "shadow-weaver", "name": "The Shadow Weaver", "status": "unknown", "disposition": "hostile",
-      "location": "unknown", "sheet": "npcs/shadow-weaver.md", "notes": "Never seen directly before Arc III (Rule 11)." }
+    {
+      "id": "skrit",
+      "name": "Skrit (goblin)",
+      "status": "alive",
+      "disposition": "wary",
+      "location": "Black Mire",
+      "notes": "Fled the first fight; Rikan let him go. Knows the Mire paths."
+    },
+    {
+      "id": "goblin-leader",
+      "name": "Goblin leader",
+      "status": "dead",
+      "location": "Whispering Caves, first chamber"
+    },
+    {
+      "id": "goblin-spear",
+      "name": "Goblin with the broken spear",
+      "status": "dead",
+      "location": "Whispering Caves, first chamber"
+    },
+    {
+      "id": "alaric",
+      "name": "Alaric Dawnwatcher",
+      "status": "alive",
+      "disposition": "unknown",
+      "location": "Dawnwatch",
+      "sheet": "npcs/alaric.md",
+      "notes": "Not yet met."
+    },
+    {
+      "id": "lyra",
+      "name": "Lyra",
+      "status": "alive",
+      "disposition": "unknown",
+      "location": "Fractured Plains (Freehold patrols)",
+      "sheet": "npcs/lyra.md",
+      "notes": "Not yet met. Solo-mode companion candidate."
+    },
+    {
+      "id": "shadow-weaver",
+      "name": "The Shadow Weaver",
+      "status": "unknown",
+      "disposition": "hostile",
+      "location": "unknown",
+      "sheet": "npcs/shadow-weaver.md",
+      "notes": "Never seen directly before Arc III (Rule 11)."
+    }
   ],
   "factions": [
-    { "id": "custodians", "name": "Custodians", "standing": "unaware", "goal": "Contain Fractures; decide what cannot be saved" },
-    { "id": "crimson-legion", "name": "Crimson Legion (General Valerius)", "standing": "unaware", "goal": "Seize the Mark as a weapon" },
-    { "id": "obsidian-covenant", "name": "Obsidian Covenant", "standing": "hunting the Shard's pulse", "goal": "Unknown" },
-    { "id": "dawnwatch", "name": "Freehold of Dawnwatch", "standing": "unaware", "goal": "Endure; early warning against Fracture storms" }
+    {
+      "id": "custodians",
+      "name": "Custodians",
+      "standing": "unaware",
+      "goal": "Contain Fractures; decide what cannot be saved"
+    },
+    {
+      "id": "crimson-legion",
+      "name": "Crimson Legion (General Valerius)",
+      "standing": "unaware",
+      "goal": "Seize the Mark as a weapon"
+    },
+    {
+      "id": "obsidian-covenant",
+      "name": "Obsidian Covenant",
+      "standing": "hunting the Shard's pulse",
+      "goal": "Unknown"
+    },
+    {
+      "id": "dawnwatch",
+      "name": "Freehold of Dawnwatch",
+      "standing": "unaware",
+      "goal": "Endure; early warning against Fracture storms"
+    }
   ],
   "clocks": [
-    { "id": "dawnwatch-siege", "name": "The Riftborn Tide (Siege of Dawnwatch)", "segments": 8, "filled": 1,
-      "on_fill": "Dawnwatch falls unless the PCs have changed the situation", "visible": false },
-    { "id": "legion-hunt", "name": "The Crimson Legion hunts the Mark", "segments": 6, "filled": 0,
-      "on_fill": "Legion seizes Rikan or someone he loves", "visible": false },
-    { "id": "covenant-shard", "name": "The Covenant follows the Shard's pulse", "segments": 6, "filled": 1,
-      "on_fill": "Malkor's agents arrive where Rikan is", "visible": false },
-    { "id": "nexus-strain", "name": "Nexus Strain (world)", "segments": 8, "filled": 3,
-      "on_fill": "A regional Fracture cascade", "visible": false },
-    { "id": "cave-exit", "name": "Find the way out of the Whispering Caves", "segments": 4, "filled": 2,
-      "on_fill": "Rikan reaches the surface at the Mire's edge", "visible": true }
+    {
+      "id": "dawnwatch-siege",
+      "name": "The Riftborn Tide (Siege of Dawnwatch)",
+      "segments": 8,
+      "filled": 1,
+      "on_fill": "Dawnwatch falls unless the PCs have changed the situation",
+      "visible": false
+    },
+    {
+      "id": "legion-hunt",
+      "name": "The Crimson Legion hunts the Mark",
+      "segments": 6,
+      "filled": 0,
+      "on_fill": "Legion seizes Rikan or someone he loves",
+      "visible": false
+    },
+    {
+      "id": "covenant-shard",
+      "name": "The Covenant follows the Shard's pulse",
+      "segments": 6,
+      "filled": 1,
+      "on_fill": "Malkor's agents arrive where Rikan is",
+      "visible": false
+    },
+    {
+      "id": "nexus-strain",
+      "name": "Nexus Strain (world)",
+      "segments": 8,
+      "filled": 3,
+      "on_fill": "A regional Fracture cascade",
+      "visible": false
+    },
+    {
+      "id": "cave-exit",
+      "name": "Find the way out of the Whispering Caves",
+      "segments": 4,
+      "filled": 2,
+      "on_fill": "Rikan reaches the surface at the Mire's edge",
+      "visible": true
+    }
   ],
   "threads": [
-    { "id": "what-is-the-shard", "summary": "What is the obsidian Shard, and why did it answer the Mark?", "status": "open", "opened_session": 1 },
-    { "id": "glyph-tablet", "summary": "The Custodian warning glyphs: who sealed the alcove, and what were they warning about?", "status": "open", "opened_session": 1 },
-    { "id": "skrit-debt", "summary": "Skrit fled alive. Will he remember the mercy, or sell it?", "status": "open", "opened_session": 1 },
-    { "id": "who-am-i", "summary": "Two sets of memories. Which instincts can Rikan trust?", "status": "open", "opened_session": 1 }
+    {
+      "id": "what-is-the-shard",
+      "summary": "What is the obsidian Shard, and why did it answer the Mark?",
+      "status": "open",
+      "opened_session": 1
+    },
+    {
+      "id": "glyph-tablet",
+      "summary": "The Custodian warning glyphs: who sealed the alcove, and what were they warning about?",
+      "status": "open",
+      "opened_session": 1
+    },
+    {
+      "id": "skrit-debt",
+      "summary": "Skrit fled alive. Will he remember the mercy, or sell it?",
+      "status": "open",
+      "opened_session": 1
+    },
+    {
+      "id": "who-am-i",
+      "summary": "Two sets of memories. Which instincts can Rikan trust?",
+      "status": "open",
+      "opened_session": 1
+    }
   ],
-  "flags": { "shard_found": true, "first_kill": true, "name_draeven_confirmed": false },
+  "flags": {
+    "shard_found": true,
+    "first_kill": true,
+    "name_draeven_confirmed": false
+  },
   "notes": "Mode A (solo). Album motif used: heartbeat in the first fight. Rule 1 in force."
 }

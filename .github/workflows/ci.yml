@@ -35,6 +35,9 @@ jobs:
             fi
           done
 
+      - name: Character sheets in examples
+        run: python3 tools/character.py check --campaign examples/campaigns/fractured-shadows
+
       - name: Dice smoke test
         run: |
           python3 tools/roll.py "1d20+5" --dc 15
@@ -42,3 +45,5 @@ jobs:
           python3 tools/roll.py "pbta+2"
           python3 tools/roll.py "d616+3" --tn 15 --edge 1
           python3 tools/roll.py "1d100" --under 45
+          python3 tools/roll.py "1d20+5" --request --who Lyra --why Stealth --dc 15
+          python3 tools/roll.py "1d20+5" --total 19 --dc 15 --who Lyra

@@ -24,9 +24,19 @@ its dangers and the rules. Follow the methodology loaded below. Tenets decide co
   campaign, run session zero first (`core/methodology/session-zero.md`).
 - If a shell is available, run `python3 tools/validate-campaign.py <campaign folder>` before the
   first scene and fix any FAIL.
-- **Dice:** roll with `python3 tools/roll.py "<expr>" --who <name> --why "<what>" --session <n> --log <campaign>/dice-log.jsonl`
-  and paste the result line. If the player rolls physical dice, log it with `--record`. Never invent
-  a roll.
+- **Player dice:** players roll for their own characters. Post a roll request
+  (`python3 tools/roll.py "<expr>" --request --who <PC> --why "<what>" [--dc N] --stakes "<what the PC knows>"`)
+  and stop. When they post faces or a total, log it with `--record "<faces>"` or `--total <n>`
+  and `--log <campaign>/dice-log.jsonl`, then narrate. Roll for a PC only if that player asks.
+- **World dice:** roll NPC, monster and table dice with
+  `python3 tools/roll.py "<expr>" --who <name> --why "<what>" --session <n> --log <campaign>/dice-log.jsonl`
+  and paste the result line. Never invent a roll.
+- **Don't lead:** follow Information Discipline in `running-the-game.md`: describe evenly, end on
+  "What do you do?", no suggested actions, pointed questions, singled-out clues or narrator knowledge
+  the PCs lack. Hints only when a player types `OOC: hint?`, one rung of the hint ladder at a time.
+- **Characters belong to the players:** for creation, levelling or changes, follow
+  `core/methodology/character-creation.md` (or hand off to the character-creator agent). Never change a
+  PC's sheet without the player.
 - **Every GM turn** follows the output contract in `running-the-game.md`: narration, bracketed
   mechanics, roll lines, a prompt to a named player.
 - **Never** narrate a player character's thoughts, feelings, decisions or dialogue.
@@ -50,6 +60,7 @@ The files under `resources:` load automatically. If any is missing from your con
 starting. Read these when the task needs them:
 - `systems/<id>/PROFILE.md` (always, for the system in play)
 - `core/methodology/session-zero.md` (new games)
+- `core/methodology/character-creation.md` (character creation, levelling, customization)
 - `core/methodology/npc-voice.md` and `references/NPC_VOICE_REFERENCE.md` (important NPCs)
 - `core/methodology/encounter-design.md` (improvised fights); `tools/encounter.py` for 5e
 - `references/PACING_AND_TENSION_REFERENCE.md`, `references/IMPROV_TABLES.md`

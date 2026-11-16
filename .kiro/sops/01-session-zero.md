@@ -19,8 +19,8 @@
 3. **The shape:** campaign or one-shot, solo or group, session length, absent-player rule, favourite pillars.
 4. **Tone:** pick from `references/GENRE_TONE_LIBRARY.md`; touchstones; lethality; humour; romance.
 5. **Safety (never skipped):** lines, veils, the `X` tool, check-ins (`references/SAFETY_TOOLS_REFERENCE.md`). Each player answers.
-6. **Table settings:** dice source, hidden rolls, fudging, narration length, menus, stakes, save format.
-7. **Characters:** system creation; goal, bond, flaw per PC; connect PCs (group) or design companions (solo).
+6. **Table settings:** players roll their own dice; GM dice source; hidden rolls; targets shown; hint level; fudging; narration length; menus; stakes; rebuilds; save format.
+7. **Characters:** each player builds their own (SOP 13, `tools/character.py`); goal, bond, flaw from the player; connect PCs (group) or design companions (solo).
 8. **Files:** `campaigns/<id>/BIBLE.md` (from `references/YOUR_CAMPAIGN_BIBLE.md`) and `state.json`.
 9. **Validate:** `python3 tools/validate-campaign.py campaigns/<id>`.
 10. **Hook:** agree why the PCs are together and where session 1 opens.

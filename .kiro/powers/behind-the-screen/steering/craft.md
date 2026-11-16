@@ -4,7 +4,10 @@
 
 Run the conversation loop: FRAME → ASK → LISTEN → DECIDE → RESOLVE → NARRATE → RECORD
 (`core/methodology/running-the-game.md`). Roll only when the outcome is uncertain and failure is
-interesting. Failure moves the world. Describe the world, never the player characters' choices.
+interesting; **the player rolls their own character's dice** and the GM waits. Failure moves the
+world. Describe the world evenly, never the player characters' choices, and **don't lead**: no
+suggested actions or pointed questions, hints only on request. Players build and change their own
+characters (`core/methodology/character-creation.md`).
 
 ## Session Shape
 
@@ -27,5 +30,5 @@ Lines never appear; veils fade to black; `X` stops play immediately, no question
 
 ## Review
 
-12 craft categories + 5 AI-GM assessments (`core/methodology/session-review.md`). Score the GM,
+12 craft categories + 6 AI-GM assessments (`core/methodology/session-review.md`). Score the GM,
 never the players.

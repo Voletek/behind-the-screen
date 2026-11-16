@@ -9,11 +9,97 @@
     "advantage_expr": "2d20kh1",
     "disadvantage_expr": "2d20kl1"
   },
-  "stats": ["STR", "DEX", "CON", "INT", "WIS", "CHA"],
-  "stat_range": [1, 30],
-  "resources": ["hp", "temp_hp", "hit_dice", "heroic_inspiration", "exhaustion", "death_saves_success", "death_saves_failure", "spell_slots_1", "spell_slots_2", "spell_slots_3", "spell_slots_4", "spell_slots_5", "spell_slots_6", "spell_slots_7", "spell_slots_8", "spell_slots_9"],
+  "stats": [
+    "STR",
+    "DEX",
+    "CON",
+    "INT",
+    "WIS",
+    "CHA"
+  ],
+  "stat_range": [
+    1,
+    30
+  ],
+  "resources": [
+    "hp",
+    "temp_hp",
+    "hit_dice",
+    "heroic_inspiration",
+    "exhaustion",
+    "death_saves_success",
+    "death_saves_failure",
+    "spell_slots_1",
+    "spell_slots_2",
+    "spell_slots_3",
+    "spell_slots_4",
+    "spell_slots_5",
+    "spell_slots_6",
+    "spell_slots_7",
+    "spell_slots_8",
+    "spell_slots_9"
+  ],
   "resources_open": true,
-  "conditions": ["Blinded", "Charmed", "Deafened", "Exhaustion", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious"],
+  "conditions": [
+    "Blinded",
+    "Charmed",
+    "Deafened",
+    "Exhaustion",
+    "Frightened",
+    "Grappled",
+    "Incapacitated",
+    "Invisible",
+    "Paralyzed",
+    "Petrified",
+    "Poisoned",
+    "Prone",
+    "Restrained",
+    "Stunned",
+    "Unconscious"
+  ],
   "conditions_open": false,
-  "difficulty": {"Very easy": 5, "Easy": 10, "Medium": 15, "Hard": 20, "Very hard": 25, "Nearly impossible": 30}
+  "difficulty": {
+    "Very easy": 5,
+    "Easy": 10,
+    "Medium": 15,
+    "Hard": 20,
+    "Very hard": 25,
+    "Nearly impossible": 30
+  },
+  "creation": {
+    "methods": {
+      "standard_array": {
+        "values": [
+          15,
+          14,
+          13,
+          12,
+          10,
+          8
+        ]
+      },
+      "point_buy": {
+        "budget": 27,
+        "costs": {
+          "8": 0,
+          "9": 1,
+          "10": 2,
+          "11": 3,
+          "12": 4,
+          "13": 5,
+          "14": 7,
+          "15": 9
+        }
+      },
+      "random": {
+        "expr": "4d6dl1",
+        "times": 6
+      }
+    },
+    "note": "SRD 5.2.1 'Generate Your Scores'. Checked before background/species adjustments: use base_stats.",
+    "starting_resources": [
+      "hp",
+      "hit_dice"
+    ]
+  }
 }

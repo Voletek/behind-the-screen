@@ -38,6 +38,15 @@ Before rolling, decide (and usually say):
 Saying stakes up front lets the player change approach. It also stops "rolling until it works".
 Hide stakes only when the uncertainty is the point (a perception roll against an ambush).
 
+State stakes **only from what the character knows** ("someone might hear you"), never from hidden
+facts ("the guard behind the door hears you"). Stakes that reveal secrets are leading
+(`running-the-game.md` → Information Discipline).
+
+Whether the player sees the target number (DC, Ob, TN) before rolling is a table setting
+(session-zero.md Step 5). Default: systems with fixed bands (PbtA) have nothing to hide; d20 and
+d616 targets are revealed **after** the roll; Mouse Guard obstacles are stated before the roll, as
+the book does.
+
 ### Difficulty in system terms
 
 Each profile gives its own scale. Rough cross-system equivalence for quick rulings [Tier 2,
@@ -57,15 +66,28 @@ heuristics; use the profile's own guidance first.
 
 ---
 
-## Step 3 — Roll Honestly
+## Step 3 — Roll Honestly (players roll their own)
 
-- Use the dice source agreed at session zero (`core/tenets.md`, Tenet 5).
-- Show the roll in this format:
-  ```
-  🎲 <Who>, <What>: <expression> → [<dice>] <mods> = <total> vs <target> <✔|✖|partial>
-  ```
+**A player character's roll is the player's roll** (Tenet 5).
+1. Send a **roll request** and stop:
+   ```
+   🎲 <PC>, roll <what>: <expression> [advantage/edge/bonus dice] · at stake: <what they know> — roll and post the result.
+   ```
+   `tools/roll.py "<expr>" --request --who <PC> --why "<what>" [--dc N]` prints one (the target goes to
+   the GM only).
+2. Tell them about modifiers and options they have (help, advantage, a trait, fate, karma); they decide.
+3. **Wait** for their result. Don't narrate the outcome in the same message as the request.
+4. Read their post (faces or a total), apply the target, and log it:
+   `tools/roll.py "<expr>" --record "<faces>" …` or `--total <n>` (source `player`).
+5. If they ask "roll for me", roll with a real source and say so.
+
+**World rolls** (NPCs, monsters, weather, tables) are the GM's: real source, shown in this format:
+```
+🎲 <Who>, <What>: <expression> → [<dice>] <mods> = <total> vs <target> <✔|✖|partial>
+```
 - Log every roll that mattered in the dice log (`core/methodology/state-keeping.md`).
 - Advantage, edges, help, gear and conditions are applied before the roll, not after.
+- Contested rolls (PC vs NPC): the player rolls theirs, the GM rolls the NPC's; reveal both.
 
 ---
 
@@ -144,12 +166,14 @@ When the rules don't cover something, or the players propose something unexpecte
 
 | Roll type | Default | Why |
 |---|---|---|
-| Player character actions | Open | Transparency; players own their results |
+| Player character actions | Rolled by the player, open | Players own their luck and their results |
 | Enemy attacks and saves | Open, unless the table prefers hidden | Honest dice; builds trust in AI GMs |
-| Perception/insight where knowing the roll leaks information | Hidden, logged | Avoids metagaming |
+| Perception/insight where *asking for* the roll leaks information | Use passive values, or a hidden GM roll if the table agreed; logged | Calling for a roll signals something is there (leading) |
 | Random encounters, weather, loot tables | Open or hidden, logged | Either is fine |
 
 Hidden rolls are still tool-rolled and still logged. A player may ask to see the log after the scene.
+A table that wants players to roll everything (including noticing) can ask the whole party to roll
+perception at random moments, so a request never signals that something is there.
 
 ---
 
@@ -166,7 +190,8 @@ An AI GM may not know a system's rules exactly. Rules of thumb [Tier 3]:
 ## Quality Gates
 
 - [ ] Was the roll needed (uncertain + interesting failure)?
-- [ ] Were the stakes clear before the roll (unless deliberately hidden)?
+- [ ] Were the stakes clear before the roll (unless deliberately hidden), and based only on what the PC knows?
+- [ ] Did the player roll their own character's dice, and did the GM wait for the result?
 - [ ] Was the difficulty set before the roll and not changed after?
 - [ ] Did failure move the world forward?
 - [ ] Were essential clues available without a lucky roll?

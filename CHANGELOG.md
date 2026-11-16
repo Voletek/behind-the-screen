@@ -2,6 +2,30 @@
 
 All notable changes to this project are documented here.
 
+## [0.2.0] — 2026-11-15
+
+### Added
+- **Player-owned characters:** `core/methodology/character-creation.md` (ownership rule, guided and
+  fast creation, group connections, pregen tweaks, sheets, customization table, advancement);
+  `tools/character.py` (`new`, `check`, `show`, `methods`: creates the sheet and state entry, checks
+  stat names and ranges, standard array / point buy / spreads, and sheet-vs-state agreement);
+  `creation` blocks in every `profile.json`; character-creator agent, `/new-character` and
+  `/level-up` commands, character-creation skill, SOP 13; a sheet for Rikan in the example campaign.
+- **Players roll their own dice:** Tenet 5 rewritten (players roll for their characters, GM rolls
+  only the world); roll requests and "wait for the result" in the conversation loop, adjudication
+  and output contract; `roll.py --request` (prints a roll request, keeps the target with the GM) and
+  `--total` (logs a total the player reported). New table settings: who rolls, targets shown, hint level, rebuilds.
+- **No leading:** Information Discipline section in `running-the-game.md` (describe evenly, open
+  prompts, only what PCs know, answer what was asked, no meta-signals, stakes from PC knowledge,
+  NPCs don't solve it) and a hint ladder used only on `OOC: hint?`; Tenet 2 updated.
+- **Review:** A6 No Leading assessment; `LEAD` and `ROLL` flags; Dice Honesty now checks that
+  players rolled their own dice (cap 5 when the GM rolled for them). Failure modes 21-24.
+
+### Changed
+- Example transcripts show players rolling and non-leading descriptions; the solo transcript's
+  leading hint and a puppeting line were removed. Example dice log, bible table settings and review updated.
+- Validator FAILs when a `party[].sheet` file is missing. Bundles include the character method and sheets.
+
 ## [0.1.0] — 2026-11-14
 
 ### Added

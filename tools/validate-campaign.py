@@ -153,9 +153,13 @@ def check_state(rep, where, state, root=cl.ROOT):
             state[key] = []
         else:
             check_unique(rep, where, val, key)
+    base = os.path.dirname(where) if where.endswith((".json", ".md")) else where
     for pc in state.get("party", []):
         if isinstance(pc, dict):
             check_character(rep, f"{where} party[{pc.get('id', '?')}]", pc, profile)
+            sheet = pc.get("sheet")
+            if sheet and not os.path.exists(os.path.join(base, sheet)):
+                rep.fail(f"{where} party[{pc.get('id', '?')}]", f"character sheet '{sheet}' not found (tools/character.py new)")
     for npc in state.get("npcs", []):
         if not isinstance(npc, dict):
             continue
@@ -171,7 +175,7 @@ def check_state(rep, where, state, root=cl.ROOT):
         for name, res in (npc.get("resources") or {}).items():
             check_resources(rep, w, name, res, None)
         sheet = npc.get("sheet")
-        if sheet and not os.path.exists(os.path.join(os.path.dirname(where) if os.path.isfile(where) else where, sheet)):
+        if sheet and not os.path.exists(os.path.join(base, sheet)):
             rep.warn(w, f"sheet '{sheet}' not found next to the state file")
     for clock in state.get("clocks", []):
         if not isinstance(clock, dict):

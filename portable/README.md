@@ -25,16 +25,16 @@ No Python? Concatenate these files by hand, in order: `portable/BOOT_PROMPT.md`,
 for a new game), `systems/<id>/PROFILE.md`, `portable/TABLE_PREFERENCES.md`, then your campaign
 bible, state and last session log.
 
-Measured sizes: a new-game bundle with `--lean` is ~13-14k tokens; the full Fractured Shadows campaign bundle is ~25k tokens; a lean one-shot bundle ~15k tokens.
+Measured sizes: a new-game bundle with `--lean` is ~18k tokens; the full Fractured Shadows campaign bundle is ~30k tokens.
 
 ## Step 2 — Load it into your assistant
 
 | Assistant | Best setup | Dice | Saving |
 |---|---|---|---|
-| **Claude** (claude.ai Projects) | [claude.md](claude.md) | Analysis tool / code, or players roll | Save Blocks; or project files |
-| **ChatGPT** (Projects or a custom GPT) | [chatgpt.md](chatgpt.md) | Code interpreter (Python) | Save Blocks; or files via code interpreter |
-| **Kiro** (IDE, CLI, Web) | The repo itself (see `.kiro/README.md`) | `tools/roll.py` | Campaign files + hooks |
-| **Any other chat** (Gemini, local models, Discord bots) | [any-chat.md](any-chat.md) | Players roll | Save Blocks |
+| **Claude** (claude.ai Projects) | [claude.md](claude.md) | Players roll their own; GM uses the analysis tool or a designated player | Save Blocks; or project files |
+| **ChatGPT** (Projects or a custom GPT) | [chatgpt.md](chatgpt.md) | Players roll their own; GM uses code interpreter | Save Blocks; or files via code interpreter |
+| **Kiro** (IDE, CLI, Web) | The repo itself (see `.kiro/README.md`) | Players roll their own; GM uses `tools/roll.py` | Campaign files + hooks |
+| **Any other chat** (Gemini, local models, Discord bots) | [any-chat.md](any-chat.md) | Players roll their own; a player or bot rolls for the GM | Save Blocks |
 
 ## Step 3 — Play, then save
 

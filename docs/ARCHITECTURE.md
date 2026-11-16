@@ -33,7 +33,7 @@
 |---|---|---|
 | `core/methodology/songwriting.md` | `running-the-game.md` | The core craft |
 | `song-planning.md` (Song Brief) | `session-prep.md` (Session Brief) | Guided vs auto-pilot, stop-or-flow |
-| `critique.md` (12 + 5 + Suno + album) | `session-review.md` (12 + 5 + continuity) | Decision gate, flags, hard caps |
+| `critique.md` (12 + 5 + Suno + album) | `session-review.md` (12 + 6 + continuity) | Decision gate, flags, hard caps |
 | `character-voice.md` | `npc-voice.md` | Voice sheet, light-touch dialect, non-verbal entities |
 | `album-continuity.md` + blueprint | `campaign-continuity.md` + bible | Registry → state; rules → continuity rules; extension protocol → arcs; plus canon forks |
 | `suno-optimization.md` (platform layer) | `systems/` + `adjudication.md` | The rules system is the volatile layer, separate from craft |

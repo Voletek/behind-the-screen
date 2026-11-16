@@ -52,6 +52,10 @@ Don't call for a roll on very easy tasks unless the circumstances make them unce
 
 ## 3. Characters
 
+> Players build their own characters with `core/methodology/character-creation.md`; list this
+> system's creation methods with `python3 tools/character.py methods --system dnd-5e`.
+> Players roll their own dice for their characters (Tenet 5).
+
 - **Abilities:** Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma (state.json:
   `STR DEX CON INT WIS CHA` scores; modifier = (score − 10) ÷ 2, rounded down).
 - **Skills** (ability): Acrobatics (DEX), Animal Handling (WIS), Arcana (INT), Athletics (STR),

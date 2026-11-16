@@ -17,17 +17,20 @@
 3. Enable **code interpreter**.
 4. Each session: paste the campaign bible + Save Block, or upload them.
 
-## Dice with code interpreter
+## Dice
 
-Ask at session zero: "Roll all dice with Python and show the code result." The GM can run
-`roll.py` directly:
+**Players roll their own** (physical dice, an app, or `roll.py` on their own machine) and post the
+result. The GM sends a roll request and waits.
+
+For the GM's rolls (monsters, NPCs, tables), enable **code interpreter** and ask at session zero:
+"Roll your own dice with Python and show the code result." The GM can run `roll.py` directly:
 
 ```
-python roll.py "1d20+5" --dc 15 --who Lyra --why Stealth
+python roll.py "1d20+4" --ac 15 --who Ghoul --why "claws vs Lyra"
 ```
 
-Or ask it to use `secrets.SystemRandom` for every roll. Check now and then that it really runs the
-code (you should see the code output).
+Check now and then that it really runs the code (you should see the code output). If a player wants
+the GM to roll for their character, they say so.
 
 ## Tips
 

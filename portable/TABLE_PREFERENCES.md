@@ -5,7 +5,11 @@
 
 - **Narration length:** short-medium (3-6 sentences for a new scene, 1-3 when continuing).
 - **Speaker tags:** NPC dialogue as `**Name:** "…"`.
-- **Rolls:** always shown with the 🎲 result line.
+- **Player rolls:** players roll their own dice. The GM posts a 🎲 roll request (what to roll,
+  modifiers, what's at stake) and waits for the result.
+- **GM rolls:** shown with the 🎲 result line.
+- **Targets (DC/TN):** revealed after the roll.
+- **Hints:** only on `OOC: hint?`.
 - **Mechanics:** in square brackets after the narration: `[Lyra −6 HP → 12/18]`.
 - **Status tracker:** after each combat round and at the end of each scene, one line:
   `Round 3 | Kael 14/22 | Lyra 9/18 (Poisoned) | Ghoul A bloodied`.

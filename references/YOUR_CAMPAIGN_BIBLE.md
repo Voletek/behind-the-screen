@@ -25,7 +25,11 @@ One paragraph: who the PCs are, what situation they start in, what's at stake.
 ## 4. Table Settings
 | Setting | Choice |
 |---|---|
-| Dice source | |
+| Player character rolls | players roll their own / GM rolls on request |
+| GM (world) rolls source | |
+| Targets (DC/TN) shown | before / after / never |
+| Hint level | off / on request / offered when stuck |
+| Rebuilds | |
 | GM rolls | open / hidden-but-logged |
 | Fudging | never / allowed for hidden rolls (logged) |
 | Narration length | |
